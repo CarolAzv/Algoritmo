@@ -1,0 +1,18 @@
+add
+
+addi
+
+sub
+
+mul
+
+....
+
+condicional
+  muda pc dependendo da condição
+  bne
+  
+  beq
+
+incodicional
+  j
