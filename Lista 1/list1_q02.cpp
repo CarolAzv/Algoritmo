@@ -20,9 +20,9 @@ int main(){
     std::cin >> p;
 
     if(p = 1){
-        std::cout << "Carol tem " << idade1 <<" anos e gosta de " << gosto1 << ", " << filme1 << ", " << comida1 << ", " << inte1 << std::endl;
+        std::cout << "Carol tem " << idade1 << " anos e gosta de " << gosto1 << ", " << filme1 << ", " << comida1 << ", " << inte1 << std::endl;
     }
     else{
-        std::cout << "Taynah tem " << idade2 <<" anos e gosta de " << gosto2 << ", " << filme2 << ", " << comida2 << ", " << inte2 << std::endl;
+        std::cout << "Taynah tem " << idade2 << " anos e gosta de " << gosto2 << ", " << filme2 << ", " << comida2 << ", " << inte2 << std::endl;
     }
 }
