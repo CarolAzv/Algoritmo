@@ -74,8 +74,8 @@ int main() {
         //arumar
         while(saida >> cand[numCandidatos].numero){
             entrada.getline(cand[numCandidatos].nome, MAXNOME);
-            cand[numCandidatos].votos = 0;
-            numCandidatos++;
+            //cand[numCandidatos].votos = 0;
+            //numCandidatos++;
         }
         saida.close();
     }
