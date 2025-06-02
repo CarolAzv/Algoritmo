@@ -3,8 +3,7 @@
 int main(){
     int idade1, favnum1, idade2, favnum2, point;
     double tamanho1, peso1, tamanho2, peso2;
-    bool ler1, gato1, ler2, gato2;
-    std::string nome1, sobrenome1, nome2, sobrenome2, inicial1, favletra1, inicial2, favletra2;
+    bool ler1, gato1, ler2, gato2, inicial1, inicial2, nome1, sobrenome1, nome2, sobrenome2, favletra1, favletra2;
 
     idade1 = 19;
     favnum1 = 5;
