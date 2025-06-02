@@ -51,24 +51,32 @@ int main() {
     cout << "O candidato vencedor foi " << cand[vencedor].nome << endl;
     return 0;
 
-    //Atualização dos votos
-    ifstream entrada(arquivoEntrada);
-    if(!entrada.is_open()){
-        cout << "Erro ao abrir arquivo " << arquivoEntrada << endl;
-        exit(0);
-    }
-    entrada.close();
-
     //Loop de votos
     int voto = 0;
     while(voto != -1){
         //tem que ler as informações dos candiatos, como?
         cout << "Em qual candidato você quer votar?" << endl;
         cout << "----------------------------------" << endl;
-        cout << "| " << Candidato << endl;
-        cout << "| " << Candidato << endl;
-        cout << "| " << Candidato.nome[MAXNOME] << endl;
+        cout << "| " << arumar << endl;
+        cout << "| " << arumar << endl;
+        cout << "| " << arumar << endl;
         cout << "----------------------------------" << endl;
         cin >> voto;
+
+        //Atualização dos votos
+        ifstream saida(arquivoSaida);
+        if(!entrada.is_open()){
+            cout << "Erro ao abrir arquivo " << arquivoSaida << endl;
+            exit(0);
+        }
+
+        int numCandidatos = 0;
+        //arumar
+        while(saida >> cand[numCandidatos].numero){
+            entrada.getline(cand[numCandidatos].nome, MAXNOME);
+            cand[numCandidatos].votos = 0;
+            numCandidatos++;
+        }
+        saida.close();
     }
 }
