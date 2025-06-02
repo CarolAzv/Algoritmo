@@ -14,7 +14,7 @@ using std::ios;
 const int MAXNOME = 100;
 const int MAXCANDIDATO = 20;
 
-struct Candidato {
+struct Candidato{
     char nome[MAXNOME];
     int numero;
     int votos;
@@ -51,18 +51,24 @@ int main() {
     cout << "O candidato vencedor foi " << cand[vencedor].nome << endl;
     return 0;
 
+    //Atualização dos votos
+    ifstream entrada(arquivoEntrada);
+    if(!entrada.is_open()){
+        cout << "Erro ao abrir arquivo " << arquivoEntrada << endl;
+        exit(0);
+    }
+    entrada.close();
+
     //Loop de votos
     int voto = 0;
     while(voto != -1){
         //tem que ler as informações dos candiatos, como?
         cout << "Em qual candidato você quer votar?" << endl;
         cout << "----------------------------------" << endl;
-        cout << "| " << voto << endl;
-        cout << "| " << voto << endl;
-        cout << "| " << voto << endl;
+        cout << "| " << Candidato << endl;
+        cout << "| " << Candidato << endl;
+        cout << "| " << Candidato.nome[MAXNOME] << endl;
         cout << "----------------------------------" << endl;
         cin >> voto;
     }
-
-
 }
