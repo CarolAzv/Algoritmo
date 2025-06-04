@@ -1,0 +1,21 @@
+1- Função soma todos os itens de uma lista
+   Complexidade temporal = n
+   Complexidade espacial = 1
+
+2- Função checa se a itens repetidos em uma dada lista, retornando verdadeiro caso aja itens repetidos e falso caso não
+   Complexidade temporal = n^2
+   Complexidade espacial = n^2
+
+3- 
+   Complexidade temporal = n
+   Complexidade espacial = n
+
+4- Cria uma segunda lista com a ordem invertida dos itens da primeira lista
+   Complexidade temporal = 2n
+   Complexidade espacial = 2n
+
+5- calcula e retorna o numero vezes a pontencia dada
+   Complexidade temporal = n^2
+   Complexidade espacial = n^2
+
+6- Função 1 deve ser a mais rapida enquanto Função 5 deve ser mais demorada
