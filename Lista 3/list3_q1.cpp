@@ -1,4 +1,5 @@
 #include <iostream>
+//conta tá errando
 
 int main(){
     double tempnow, tempf, t;
@@ -11,14 +12,12 @@ int main(){
     std::cin >> qual;
 
     if(qual = 1){
-        tempf = (tempnow - 32) * 1.8;
-        return tempf;
+        tempf = (tempnow - 32) * 9/5;
+        std::cout << "A temperatura convertida é " << tempf << "º";
     }
     else if(qual = 2){
-        tempf = (tempnow * 1.8) + 32;
-        return tempf;
+        tempf = (tempnow * 9/5) + 32;
+        std::cout << "A temperatura convertida é " << tempf << "º";
     }
-    std::cout << "A temperatura convertida é " << tempf << "º";
-
     return 0;
 }
