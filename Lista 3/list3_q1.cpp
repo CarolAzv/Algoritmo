@@ -2,7 +2,7 @@
 //conta tá errando
 
 int main(){
-    double tempnow, tempf, t;
+    double tempnow = 0, tempf = 0, t = 0;
     int qual;
 
     std::cout << "Diga sua temperatura: ";
