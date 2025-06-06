@@ -6,8 +6,8 @@ int main(){
 
     std::cout << "Diga sua temperatura: ";
     std::cin >> tempnow;
-    std::cout << "Selecione (1) para converter Fahrenheit para Celsius";
-    std::cout << "Selecione (2) para converter Celsius para Fahrenheit";
+    std::cout << "Selecione (1) para converter Fahrenheit para Celsius, ";
+    std::cout << "Selecione (2) para converter Celsius para Fahrenheit: ";
     std::cin >> qual;
 
     if(qual = 1){
