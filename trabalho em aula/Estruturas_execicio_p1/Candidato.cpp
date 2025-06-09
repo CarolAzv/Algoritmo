@@ -26,6 +26,30 @@ struct Candidato{
     int numero;
     int votos;
 };
+
+void leCandidatos(){}
+
+void buscaCandidato(){}
+
+void gravarVoto(){
+    ifstream saida();
+
+}
+
+void imprimeResultados(){}
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 ifstream entrada("candidatos.txt");
     if(!entrada.is_open){
