@@ -23,6 +23,7 @@ double toc()
 
 //=========================================================================//
 int main(){
+    tic()
     double velo, dist, temp;
 
     std::cout << "Distancia pecorida: ";
@@ -31,7 +32,8 @@ int main(){
     std::cin >> temp;
 
     velo = dist/temp;
-    std::cout << "A velocidade media é: " << velo;
+    std::cout << "A velocidade media é: " << velo << '\n';
     
+    toc()
     return 0;
 }
