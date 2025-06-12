@@ -13,5 +13,5 @@ int main(){
         std::cout << "Você errou! tente novamente: ";
         std::cin >> atp;
     }
-    std::cout << "Você acertou! Parabens! ";
+    std::cout << "Você acertou! Parabens! " << '\n';
 }
