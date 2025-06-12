@@ -12,11 +12,11 @@ int main(){
 
     if(qual = 1){
         tempf = (tempnow - 32) * 9/5;
-        std::cout << "A temperatura convertida é " << tempf << "º";
+        std::cout << "A temperatura convertida é " << tempf << "º" << '\n';
     }
     else if(qual = 2){
         tempf = (tempnow * 9/5) + 32;
-        std::cout << "A temperatura convertida é " << tempf << "º";
+        std::cout << "A temperatura convertida é " << tempf << "º" << '\n';
     }
     return 0;
 }
