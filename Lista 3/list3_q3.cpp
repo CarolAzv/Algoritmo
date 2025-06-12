@@ -13,7 +13,7 @@ int main(){
     std:: cin >> c;
     
     media = mediad3(a, b, c);
-    std::cout << "Media = " << media;
+    std::cout << "Media = " << media << '\n';
 
     return 0;
 }
