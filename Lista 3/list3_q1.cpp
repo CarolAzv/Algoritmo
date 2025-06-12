@@ -1,5 +1,4 @@
 #include <iostream>
-//conta tá errando
 
 int main(){
     double tempnow = 0, tempf = 0, t = 0;
