@@ -14,11 +14,11 @@ int main(){
         }
     }
 
-    if(no == 1){
-        std::cout << "Numero " << num << " Não é primo" << '\n';
+    if(no=1){
+        std::cout << "Numero " << num << "Não é primo" << '\n';
     }
     else{
-        std::cout << "Numero " << num << " é primo!" << '\n';
+        std::cout << "Numero " << num << "é primo!" << '\n';
     }
     return 0;
 }
