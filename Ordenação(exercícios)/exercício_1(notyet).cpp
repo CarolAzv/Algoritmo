@@ -8,7 +8,14 @@ void troca(int *v1, int *v2){
     *v1 =  salva;
 }
 
-void 
+void temduplo(int v, int n){
+    for(int i=1; i<n; i++){
+        if(v[i] == v[i-1]){
+            return true;
+        }
+    }
+    return false;
+}
 
 void imprimir(int lista, int n){
     for(int i=0; i<n; i++){
