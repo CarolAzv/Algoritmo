@@ -8,9 +8,9 @@ void troca(int *v1, int *v2){
     *v1 =  salva;
 }
 
-void imprimir(int lista, int n){
+void imprimir(int v[], int n){
     for(int i=0; i<n; i++){
-        cout << lista[i] << " ";
+        cout << v[i] << " ";
     }
 }
 
@@ -27,7 +27,7 @@ int main(){
     }
 
     for(int i=1; i<n; i++){
-        int j = i;
+        int j=i;
         while(j>0 && v[j] < v[j-1]){
             troca(v[j], v[j-1]);
             j = j-1;
