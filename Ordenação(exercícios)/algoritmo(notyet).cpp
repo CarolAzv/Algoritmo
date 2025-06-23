@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-void troca(int *v1, int *v2){
+void troca(int v1, int v2){
     int salva;
-    salva = *v2;
-    *v2 = *v1;
-    *v1 =  salva;
+    salva = v2;
+    v2 = v1;
+    v1 =  salva;
 }
 
 void imprimir(int v[], int n){
