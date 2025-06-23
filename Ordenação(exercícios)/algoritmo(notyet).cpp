@@ -15,12 +15,15 @@ void imprimir(int lista, int n){
 }
 
 int main(){
-    int n, v;
+    int n;
+    int v[n];
     cout << "Quantos numeros tem a array: ";
     cin >> n;
     cout << "Digite os numeros: ";
+    cin >> v[0];
     for(int i=1; i<n; i++){
-        cin >> v;
+        cout << " ";
+        cin >> v[i];
     }
 
     for(int i=1; i<n; i++){
