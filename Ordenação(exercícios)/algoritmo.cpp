@@ -33,7 +33,6 @@ int main(){
             j = j-1;
         }
     }
-
     imprimir(v, n);
     return 0;
 }
