@@ -14,7 +14,7 @@ int função(int x){
 int main(){
     int num;
     num = 10145;
-    cout << "Total " << função(num) << endl;
+    cout << "Total: " << função(num) << endl;
 
     return 0;
 }
