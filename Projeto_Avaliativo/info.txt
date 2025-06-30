@@ -1,0 +1,2 @@
+facil -> Bubble Sort
+medio -> Merge Sort
