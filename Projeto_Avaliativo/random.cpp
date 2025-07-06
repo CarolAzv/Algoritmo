@@ -3,14 +3,15 @@
 #include <ctime>
 using namespace std;
 
-void randomarray(int array[], tamanho){
+int random(int a){
   srand(time(0));
-  
   int randomNum = rand() % 1001;
+  return randomNum;
+}
 
+void randomarray(int array[], int tamanho){
   for(int i=0; i<tamanho; i++){
-        cin >> randomNum;
-        array[i] = randomNum;
+    array[i] = random(tamanho);
     }
 }
 
@@ -18,7 +19,7 @@ int main(){
   int tamanho, array[300];
 
   cout << "Digite o tamanho da array: ";
-  cin >> tamanho
+  cin >> tamanho;
 
   randomarray(array, tamanho);
 
