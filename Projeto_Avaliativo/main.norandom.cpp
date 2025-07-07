@@ -1,101 +1,105 @@
 #include <iostream>
 #include <bits/stdc++.h>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
-//bubble sort
-void bubbleSort(vector<int>& v) {
-    int n = v.size();
+//random array
+void randomArray(int array[], int tamanho){
+  srand(time(0));
+  for (int i = 0; i < tamanho; ++i){
+    array[i] = rand() % 1001; 
+  }
+}
 
-    for (int i = 0; i < n - 1; i++){
-        for (int j = 0; j < n - i - 1; j++){
-            if (v[j] > v[j + 1])
-                swap(v[j], v[j + 1]);
+//bubble sort
+void bubbleSort(int array[], int m){
+    for (int i = 0; i < m - 1; i++){
+        for (int j = 0; j < m - i - 1; j++){
+            if (array[j] > array[j + 1]){
+                swap(array[j], array[j + 1]);
+            }
         }
     }
 }
 
 //merge sort
-void merge(vector<int>& arr, int left, 
-                     int mid, int right)
-{
+void merge(int array[], int left, int mid, int right){
     int n1 = mid - left + 1;
     int n2 = right - mid;
 
     vector<int> L(n1), R(n2);
 
     for (int i = 0; i < n1; i++)
-        L[i] = arr[left + i];
+        L[i] = array[left + i];
     for (int j = 0; j < n2; j++)
-        R[j] = arr[mid + 1 + j];
+        R[j] = array[mid + 1 + j];
 
     int i = 0, j = 0;
     int k = left;
 
     while (i < n1 && j < n2) {
         if (L[i] <= R[j]) {
-            arr[k] = L[i];
+            array[k] = L[i];
             i++;
         }
         else {
-            arr[k] = R[j];
+            array[k] = R[j];
             j++;
         }
         k++;
     }
 
     while (i < n1) {
-        arr[k] = L[i];
+        array[k] = L[i];
         i++;
         k++;
     }
 
     while (j < n2) {
-        arr[k] = R[j];
+        array[k] = R[j];
         j++;
         k++;
     }
 }
 
-void mergeSort(vector<int>& arr, int left, int right)
-{
+void mergeSort(int array[], int left, int right){
     if (left >= right)
         return;
 
     int mid = left + (right - left) / 2;
-    mergeSort(arr, left, mid);
-    mergeSort(arr, mid + 1, right);
-    merge(arr, left, mid, right);
+    mergeSort(array, left, mid);
+    mergeSort(array, mid + 1, right);
+    merge(array, left, mid, right);
 }
 
 
 int main(){
-    int array[300], tamanho, qual;
+    int tamanho, qual;
     cout << "----------------------" << '\n';
     cout << "|   Bubble Sort = 1  |" << '\n';
     cout << "|    Merge Sort = 2  |" << '\n';
     cout << "----------------------" << '\n';
-    cin >> qual
+    cin >> qual;
 
     cout << '\n' << "informe o tamanha da array: ";
     cin >> tamanho;
-    cout << '\n' << "informe a array: ";
-
-    for(int i=0; i< tamanho; i++){
-        getline(cin, array[i]);
-    }
+    
+    int array[tamanho];
+    randomArray(array, tamanho);
 
     if(qual == 1){
-        bubbleSort(array);
+        bubbleSort(array, tamanho);
         for(int i=0; i<tamanho; i++){
-        cout << array[i] << " ";
+            cout << array[i] << " ";
         }
     }
 
     if(qual == 2){
-        mergeSort(arr, 0, n - 1)
+        mergeSort(array, 0, tamanho - 1);
         for(int i=0; i<tamanho; i++){
-        cout << array[i] << " ";
+            cout << array[i] << " ";
         }
     }
 
