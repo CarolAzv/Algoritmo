@@ -1,7 +1,11 @@
 #include <iostream>
 using namespace std;
 
-void random_array(int a[]){}
+void random_array(int a[], int tamanho){
+  for (int i = 0; i < tamanho; ++i){
+    a[i] = rand() % 501;
+  }
+}
 
 int soma_array(int a[], int primeiro, int ultimo){
     int soma = 0;
@@ -26,12 +30,12 @@ int main(){
         cin >> size;
         int lista[size];
         
-        random_array();
-
+        random_array(lista, size);
         for(int i=0; i<size; i++){
-            cin >> lista[i];
+        cout << lista[i] << " ";
         }
 
+        cout << '\n';
         cout << soma_array(lista, 0, size-1);
     }
 
