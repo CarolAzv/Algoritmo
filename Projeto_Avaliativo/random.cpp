@@ -3,16 +3,10 @@
 #include <ctime>
 using namespace std;
 
-int random(int a){
-  srand(time(0));
-  int randomNum = rand() % 1001;
-  return randomNum;
-}
-
 void randomarray(int array[], int tamanho){
-  for(int i=0; i<tamanho; i++){
-    array[i] = random(tamanho);
-    }
+  for (int i = 0; i < tamanho; ++i){
+    array[i] = rand() % 1001;
+  }
 }
 
 int main(){
