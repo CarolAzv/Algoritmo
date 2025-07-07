@@ -1,9 +1,12 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
-void random_array(int a[], int tamanho){
+void random_array(int array[], int tamanho){
+  srand(time(0));
   for (int i = 0; i < tamanho; ++i){
-    a[i] = rand() % 501;
+    array[i] = rand() % 501; 
   }
 }
 
