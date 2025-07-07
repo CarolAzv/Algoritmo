@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+void random_array(int a[]){}
+
 int soma_array(int a[], int primeiro, int ultimo){
     int soma = 0;
     if(primeiro == ultimo){
@@ -20,9 +22,19 @@ int main(){
     cin >> sn;
 
     if(sn == 1){
-        cout << "A FAZER";
+        cout << "Informe o tamanho da array: ";
+        cin >> size;
+        int lista[size];
+        
+        random_array();
+
+        for(int i=0; i<size; i++){
+            cin >> lista[i];
+        }
+
+        cout << soma_array(lista, 0, size-1);
     }
-    
+
     else{
         cout << "Informe o tamanho da array: ";
         cin >> size;
