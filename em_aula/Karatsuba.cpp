@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+long long randomnum(){
+    gen(rd());
+    long long min_val = 100000;
+    long long max_val = 999999;
+    distrib(min_val, max_val);
+    long long randomNumber = distrib(gen);
+
+  return randomNumber;
+}
+
+long long karatsuba(long long u, long long v, int n){
+    int m;
+    long long p, q, r, s;
+    if(n <=3){
+        return u * v;
+    }
+    m = n/2;
+    p = u/static_cast<long long>(std::pow(10, m));
+    q = u%static_cast<long long>(std::pow(10, m));
+    r = v/static_cast<long long>(std::pow(10, m));
+    s = v%static_cast<long long>(std::pow(10, m));
+    long long pr = karatsuba(p, r, m);
+    long long qs = karatsuba(q, s, m);
+    long long y = karatsuba(p+q, r+s, m+1);
+    long long uv = pr * static_cast<long long>(std::pow(10, 2*m)) + (y - pr - qs) * static_cast<long long>(std::pow(10, m)) + qs;
+    return uv;
+}
+
+int main(){
+    long long u, v, result;
+    int n = std::max(std::to_string(u).size(), std::to_string(v).size());
+
+    u = randomnum();
+    v = randomnum();
+
+    result = karatsuba(u, v, n);
+    
+    cout << result;
+
+    return 0;
+}
