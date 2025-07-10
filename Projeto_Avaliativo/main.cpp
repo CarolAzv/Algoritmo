@@ -3,7 +3,23 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <chrono>
+#include <thread>
+#include <windows.h>
+#include <Psapi.h>
 using namespace std;
+
+void tic(int mode=0) {
+    static std::chrono::_V2::system_clock::time_point t_start;
+    
+    if (mode==0)
+        t_start = std::chrono::high_resolution_clock::now();
+    else {
+        auto t_end = std::chrono::high_resolution_clock::now();
+        std::cout << "Elapsed time is " << (t_end-t_start).count()*1E-9 << " seconds\n";
+    }
+}
+void toc() { tic(1); }
 
 //random array
 void randomArray(int array[], int tamanho){
@@ -75,7 +91,8 @@ void mergeSort(int array[], int left, int right){
 }
 
 
-int main(){
+int main(int argc, char **argv){
+  tic()
     int tamanho, qual;
     cout << "----------------------" << '\n';
     cout << "|   Bubble Sort = 1  |" << '\n';
@@ -102,6 +119,9 @@ int main(){
             cout << array[i] << " ";
         }
     }
-
+  toc()
+  PROCESS_MEMORY_COUNTERS memCounter;
+  BOOL result = K32GetProcessMemoryInfo(GetCurrentProcess(), &memCounter, sizeof(memCounter));
+  std::cout << "WorkingSetSize " << memCounter.WorkingSetSize << std::endl;
     return 0;
 }
