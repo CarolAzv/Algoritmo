@@ -19,14 +19,21 @@ void tic(int mode=0) {
 void toc() { tic(1); }
 
 long long randomnum(){
-    gen(rd());
-    long long min_val = 100000;
-    long long max_val = 999999;
-    distrib(min_val, max_val);
-    long long randomNumber = distrib(gen);
-
-  return randomNumber;
+    std::uniform_int_distribution<> dis(100000, 999999);
+    long long randomNumber = dis(gen);
+    
+    return randomNumber;
 }
+
+//long long randomnum(){
+//    gen(rd());
+//    long long min_val = 100000;
+//    long long max_val = 999999;
+//    distrib(min_val, max_val);
+//    long long randomNumber = distrib(gen);
+//
+//  return randomNumber;
+//}
 
 long long mulcomun(long long u, long long v){
     return u * v;
