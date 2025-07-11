@@ -4,8 +4,6 @@
 #include <ctime>
 #include <chrono>
 #include <thread>
-#include <windows.h>
-#include <Psapi.h>
 using namespace std;
 
 void tic(int mode=0) {
@@ -67,7 +65,7 @@ int main(){
     cout <<"----------------------------";
     cin >> qual;
 
-    tic()
+    tic();
 
     if(qual == 1){
         result = karatsuba(u, v, n);
@@ -79,6 +77,6 @@ int main(){
     
     cout << result;
     
-    toc()
+    toc();
     return 0;
 }
