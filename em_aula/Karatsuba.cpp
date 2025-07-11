@@ -3,6 +3,18 @@
 #include <ctime>
 using namespace std;
 
+void tic(int mode=0) {
+    static std::chrono::_V2::system_clock::time_point t_start;
+    
+    if (mode==0)
+        t_start = std::chrono::high_resolution_clock::now();
+    else {
+        auto t_end = std::chrono::high_resolution_clock::now();
+        std::cout << "Elapsed time is " << (t_end-t_start).count()*1E-9 << " seconds\n";
+    }
+}
+void toc() { tic(1); }
+
 long long randomnum(){
     gen(rd());
     long long min_val = 100000;
@@ -50,6 +62,8 @@ int main(){
     cout <<"----------------------------";
     cin >> qual;
 
+    tic()
+
     if(qual == 1){
         result = karatsuba(u, v, n);
     }
@@ -59,6 +73,7 @@ int main(){
     }
     
     cout << result;
-
+    
+    toc()
     return 0;
 }
