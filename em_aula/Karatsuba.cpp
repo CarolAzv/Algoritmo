@@ -1,6 +1,11 @@
 #include <iostream>
+#include <bits/stdc++.h>
 #include <cstdlib>
 #include <ctime>
+#include <chrono>
+#include <thread>
+#include <windows.h>
+#include <Psapi.h>
 using namespace std;
 
 void tic(int mode=0) {
