@@ -13,6 +13,10 @@ long long randomnum(){
   return randomNumber;
 }
 
+long long mulcomun(long long u, long long v){
+    return u * v;
+}
+
 long long karatsuba(long long u, long long v, int n){
     int m;
     long long p, q, r, s;
@@ -34,11 +38,25 @@ long long karatsuba(long long u, long long v, int n){
 int main(){
     long long u, v, result;
     int n = std::max(std::to_string(u).size(), std::to_string(v).size());
+    int qual;
 
     u = randomnum();
     v = randomnum();
+    cout << u << '\n' << v;
 
-    result = karatsuba(u, v, n);
+    cout <<"----------------------------";
+    cout <<"| Multiplicação comun   1  |";
+    cout <<"|       Karatsuba       2  |";
+    cout <<"----------------------------";
+    cin >> qual;
+
+    if(qual == 1){
+        result = karatsuba(u, v, n);
+    }
+
+    if(qual == 2){
+        result = mulcomun(u, v);
+    }
     
     cout << result;
 
