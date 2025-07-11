@@ -1,9 +1,9 @@
 #include <iostream>
 #include <bits/stdc++.h>
-#include <cstdlib>
 #include <ctime>
 #include <chrono>
 #include <thread>
+#include <random>
 using namespace std;
 
 void tic(int mode=0) {
@@ -19,21 +19,13 @@ void tic(int mode=0) {
 void toc() { tic(1); }
 
 long long randomnum(){
-    std::uniform_int_distribution<> dis(100000, 999999);
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(100000, 999999);
     long long randomNumber = dis(gen);
-    
-    return randomNumber;
-}
 
-//long long randomnum(){
-//    gen(rd());
-//    long long min_val = 100000;
-//    long long max_val = 999999;
-//    distrib(min_val, max_val);
-//    long long randomNumber = distrib(gen);
-//
-//  return randomNumber;
-//}
+  return randomNumber;
+}
 
 long long mulcomun(long long u, long long v){
     return u * v;
@@ -64,12 +56,12 @@ int main(){
 
     u = randomnum();
     v = randomnum();
-    cout << u << '\n' << v;
+    cout << u << '\n' << v << '\n';
 
-    cout <<"----------------------------";
-    cout <<"| Multiplicação comun   1  |";
-    cout <<"|       Karatsuba       2  |";
-    cout <<"----------------------------";
+    cout <<"----------------------------" << '\n';
+    cout <<"| Multiplicação comun   1  |" << '\n';
+    cout <<"|       Karatsuba       2  |" << '\n';
+    cout <<"----------------------------" << '\n';
     cin >> qual;
 
     tic();
@@ -82,7 +74,7 @@ int main(){
         result = mulcomun(u, v);
     }
     
-    cout << result;
+    cout << result << '\n';
     
     toc();
     return 0;
