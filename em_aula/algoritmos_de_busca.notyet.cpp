@@ -32,8 +32,12 @@ int binario(int array[], int comeco, int fim, int chave){
   if(array[meio] == chave){
     return chave;
   }
-  if(chave < meio){}
-  if(chave > meio){}
+  if(chave < meio){
+    binario(array, comeco,  meio-1, chave)
+  }
+  if(chave > meio){
+    binario(array, meio+1,  fim, chave)
+  }
 }
 
 int main(){
