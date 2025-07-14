@@ -14,7 +14,7 @@ long long fibonacci(int n, int a, int b, int check){
     return b
   }
   else{
-    return fibonacci(n,  a, b,  check);
+    return fibonacci(n, a, b, check);
   }
 }
 
