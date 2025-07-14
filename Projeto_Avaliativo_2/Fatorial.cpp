@@ -1,20 +1,26 @@
 #include <iostream>
 using namespace std;
 
-int Fatorial(int a, int b, int mul){
+long long fatorial(int a, int b, int mul){
   if(b <= 0){
     return 0
   }
   else{
     mul= a*b
-      return mul + Fatorial(a-2, b-2, mul)
+      return mul + fatorial(a-2, b-2, mul)
   }
 }
 
 int main(){
-    int numero=0; //numeros fechados
+    int n;
+    long long total;
 
-    cout << numero << "\n";
+    cout << "Informa seu numero fatorial: ";
+    cin >> n;
+
+    total = fatorial(n, n-1, 0);
+
+    cout << '\n' << total;
     
     return 0;
 }
