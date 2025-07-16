@@ -1,3 +1,4 @@
 todos os programas tem que ter uma verção recursiva não recursiva.
+APENAS 2 ALGORITMOS
 
 nenhum programa tem as duas verções
