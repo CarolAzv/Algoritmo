@@ -1,13 +1,12 @@
 #include <iostream>
 using namespace std;
 
-long long fatorial(int a, int b, int mul){
-  if(b <= 0){
-    return 0
+long long fatorial(int a){
+  if(a == 0){
+    return 1;
   }
   else{
-    mul= a*b
-      return mul + fatorial(a-2, b-2, mul)
+    return a * fatorial(a-1);
   }
 }
 
@@ -18,7 +17,7 @@ int main(){
     cout << "Informa seu numero fatorial: ";
     cin >> n;
 
-    total = fatorial(n, n-1, 0);
+    total = fatorial(n);
 
     cout << '\n' << total;
     
