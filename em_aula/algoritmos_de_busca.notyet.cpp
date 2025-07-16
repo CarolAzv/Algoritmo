@@ -1,12 +1,12 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <bits/stdc++.h>
+#include <random>
 using namespace std;
 
 void randomArray(int array[], int tamanho){
   srand(time(0));
   for (int i = 0; i < tamanho; ++i){
-    array[i] = rand() % 1001; 
+    array[i] = rand() % 10001; 
   }
 }
 
@@ -19,8 +19,51 @@ int randomnum(){
   return randomNumber;
 }
 
+void merge(int array[], int left, int mid, int right){
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+    vector<int> L(n1), R(n2);
+    for (int i = 0; i < n1; i++)
+        L[i] = array[left + i];
+    for (int j = 0; j < n2; j++)
+        R[j] = array[mid + 1 + j];
+    int i = 0, j = 0;
+    int k = left;
+    while (i < n1 && j < n2){
+        if (L[i] <= R[j]){
+            array[k] = L[i];
+            i++;
+        }
+        else {
+            array[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+    while (i < n1) {
+        array[k] = L[i];
+        i++;
+        k++;
+    }
+    while (j < n2) {
+        array[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSort(int array[], int left, int right){
+    if (left >= right)
+        return;
+
+    int mid = left + (right - left) / 2;
+    mergeSort(array, left, mid);
+    mergeSort(array, mid + 1, right);
+    merge(array, left, mid, right);
+}
+
 int linear(int array[], int tamanho, int chave){
-  for(i = 0; i<tamanho; i++){
+  for(int i = 0; i<tamanho; i++){
     if(array[i] == chave){
       return i;
     }
@@ -29,28 +72,36 @@ int linear(int array[], int tamanho, int chave){
 }
 
 int binario(int array[], int comeco, int fim, int chave){
-  int meio = (comeco+fim)/2;
-  if(array[meio] == chave){
-    return chave;
+  int meio;
+  while(comeco<=fim){
+    meio = (comeco+(fim-comeco))/2;
+    if(array[meio]==chave){
+      return meio;
+    }
+    if(chave < array[meio]){
+      fim = meio-1;
+    }
+    if(chave > array[meio]){
+      comeco = meio+1;
+    }
   }
-  if(chave < meio){
-    binario(array, comeco,  meio-1, chave)
-  }
-  if(chave > meio){
-    binario(array, meio+1,  fim, chave)
-  }
+  return -1;
 }
 
 int main(){
-  int tamanho = 10000, array[10000], chave;
+  int tamanho = 10000, array[10000], chave, resli, resbi;
   chave = randomnum();
+  randomArray(array, tamanho);
 
   cout << "A chave áleatoria é: " << chave << '\n';
 
-  linear(array, tamanho, chave);
+  resli = linear(array, tamanho, chave);
+  cout << "Resultado da busca linear: " << resli << '\n';
 
-  randomArray(array, tamanho);
-  binario(array, 0, tamanho-1, chave);
+  mergeSort(array, 0, tamanho-1);
+  cout << "sort done";
+  resbi = binario(array, 0, tamanho-1, chave);
+  cout << "Resultado da busca binaria: " << resbi;
 
   return 0;
 }
