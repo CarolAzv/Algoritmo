@@ -1,12 +1,19 @@
 #include <iostream>
 using namespace std;
 
-long long fatorial(int a){
+long long fatorialR(int a){
   if(a == 0){
     return 1;
   }
   else{
     return a * fatorial(a-1);
+  }
+}
+
+long long fatorialI(int a){
+  long long ;
+  for(int i = 1; i<a; i++){
+    
   }
 }
 
