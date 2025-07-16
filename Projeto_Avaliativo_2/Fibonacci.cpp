@@ -11,7 +11,7 @@ long long fibonacci(int n, int a, int b, int check){
     return 1;
   }
   if(n == check){
-    return b
+    return a;
   }
   else{
     return fibonacci(n, a, b, check);
@@ -25,7 +25,7 @@ int main(){
   cout << "Informe o numero de fibonacci desejado: ";
   cin >> n;
 
-  fibo = finonacci();
+  fibo = fibonacci(n, 0, 1, 0);
   cout << '\n' << fibo;
   
   return 0;
