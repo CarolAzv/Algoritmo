@@ -18,11 +18,11 @@ int minmax(int array,  int tamanho){
     min = array[1];
   }
   for(i = 2; i<tamanho; i++){
-    if(array[1] > max){
-      max = array[1];
+    if(array[i] > max){
+      max = array[i];
     }
-    if(array[1] < min){
-      min = array[1];
+    if(array[i] < min){
+      min = array[i];
     }
   }
   minmax[0] = min;
