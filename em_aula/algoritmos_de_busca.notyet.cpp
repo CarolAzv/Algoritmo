@@ -3,9 +3,10 @@
 #include <ctime>
 using namespace std;
 
-void randomarray(int array[], int tamanho){
+void randomArray(int array[], int tamanho){
+  srand(time(0));
   for (int i = 0; i < tamanho; ++i){
-    array[i] = rand() % 100001;
+    array[i] = rand() % 1001; 
   }
 }
 
@@ -48,7 +49,7 @@ int main(){
 
   linear(array, tamanho, chave);
 
-  randomarray(array, tamanho);
+  randomArray(array, tamanho);
   binario(array, 0, tamanho-1, chave);
 
   return 0;
