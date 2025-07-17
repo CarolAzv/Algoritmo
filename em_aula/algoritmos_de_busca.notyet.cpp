@@ -72,19 +72,15 @@ int linear(int array[], int tamanho, int chave){
 }
 
 int binario(int array[], int comeco, int fim, int chave){
-  int meio;
-  while(comeco<=fim){
-    meio = (comeco+(fim-comeco))/2;
-    if(array[meio]==chave){
-      return meio;
-    }
-    if(chave < array[meio]){
-      fim = meio-1;
-    }
-    if(chave > array[meio]){
-      comeco = meio+1;
-    }
+  int meio = (comeco+fim)/2;
+  if(array[meio] == chave){
+    return chave;
   }
+  if(chave < meio){
+    binario(array, comeco,  meio-1, chave)
+  }
+  if(chave > meio){
+    binario(array, meio+1,  fim, chave)
   return -1;
 }
 
