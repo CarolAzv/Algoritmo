@@ -19,33 +19,38 @@ int randomnum(){
   return randomNumber;
 }
 
+//merge sort
 void merge(int array[], int left, int mid, int right){
     int n1 = mid - left + 1;
     int n2 = right - mid;
     vector<int> L(n1), R(n2);
+
     for (int i = 0; i < n1; i++)
         L[i] = array[left + i];
     for (int j = 0; j < n2; j++)
         R[j] = array[mid + 1 + j];
+
     int i = 0, j = 0;
     int k = left;
-    while (i < n1 && j < n2){
-        if (L[i] <= R[j]){
+
+    while(i < n1 && j < n2){
+        if (L[i] <= R[j]) {
             array[k] = L[i];
             i++;
         }
-        else {
+        else{
             array[k] = R[j];
             j++;
         }
         k++;
     }
-    while (i < n1) {
+
+    while(i < n1){
         array[k] = L[i];
         i++;
         k++;
     }
-    while (j < n2) {
+    while(j < n2){
         array[k] = R[j];
         j++;
         k++;
@@ -72,15 +77,19 @@ int linear(int array[], int tamanho, int chave){
 }
 
 int binario(int array[], int comeco, int fim, int chave){
-  int meio = (comeco+fim)/2;
-  if(array[meio] == chave){
-    return chave;
+  int meio;
+  while(comeco<=fim){
+    meio = (comeco+(fim-comeco))/2;
+    if(array[meio]==chave){
+      return meio;
+    }
+    if(chave < array[meio]){
+      fim = meio-1;
+    }
+    if(chave > array[meio]){
+      comeco = meio+1;
+    }
   }
-  if(chave < meio){
-    binario(array, comeco,  meio-1, chave)
-  }
-  if(chave > meio){
-    binario(array, meio+1,  fim, chave)
   return -1;
 }
 
@@ -94,7 +103,7 @@ int main(){
   resli = linear(array, tamanho, chave);
   cout << "Resultado da busca linear: " << resli << '\n';
 
-  mergeSort(array, 0, tamanho-1);
+  mergeSort(array, 0, tamanho - 1);
   cout << "sort done";
   resbi = binario(array, 0, tamanho-1, chave);
   cout << "Resultado da busca binaria: " << resbi;
