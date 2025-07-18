@@ -81,7 +81,7 @@ void mergeSort(int array[], int left, int right){
     merge(array, left, mid, right);
 }
 
-int linear(int array[], int tamanho, int chave){
+int linearI(int array[], int tamanho, int chave){
   for(int i = 0; i<tamanho; i++){
     if(array[i] == chave){
       return i;
@@ -98,7 +98,7 @@ int linearR(int array[], int indice, int chave){
     return linearR(lista, alvo, indice + 1)
 }
 
-int binarioL(int array[], int comeco, int fim, int chave){
+int binarioI(int array[], int comeco, int fim, int chave){
   int meio;
   while(comeco<=fim){
     meio = comeco+(fim-comeco)/2;
@@ -133,7 +133,7 @@ int binarioR(int array[], int comeco, int fim, int chave){
 }
 
 int main(){
-  int tamanho = 10000, array[10000], chave, resli, resbiL, resbiR;
+  int tamanho = 10000, array[10000], chave, resliI, resliR, resbiL, resbiR;
   srand(time(0));
   chave = randomnum();
   randomArray(array, tamanho);
@@ -141,14 +141,18 @@ int main(){
   cout << "A chave áleatoria é: " << chave << '\n';
 
   tic();
-  resli = linear(array, tamanho, chave);
+  resliI = linear(array, tamanho, chave);
   toc();
   cout << "Resultado da busca linear: " << resli << '\n';
 
   tic();
   mergeSort(array, 0, tamanho - 1);
 
-  resbiL = binarioL(array, 0, tamanho-1, chave);
+  resbiI = binarioI(array, 0, tamanho-1, chave);
+  toc();
+  cout << "Resultado da busca binaria linear: " << resbiI;
+    
+  resbiI = binarioI(array, 0, tamanho-1, chave);
   toc();
   cout << "Resultado da busca binaria linear: " << resbiI;
 
