@@ -1,10 +1,11 @@
 #include <iostream>
-#include <bits/stdc++.h>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
 #include <random>
 using namespace std;
 
 void randomArray(int array[], int tamanho){
-  srand(time(0));
   for (int i = 0; i < tamanho; ++i){
     array[i] = rand() % 10001; 
   }
@@ -95,6 +96,7 @@ int binario(int array[], int comeco, int fim, int chave){
 
 int main(){
   int tamanho = 10000, array[10000], chave, resli, resbi;
+  srand(time(0));
   chave = randomnum();
   randomArray(array, tamanho);
 
@@ -104,7 +106,8 @@ int main(){
   cout << "Resultado da busca linear: " << resli << '\n';
 
   mergeSort(array, 0, tamanho - 1);
-  cout << "sort done";
+  cout << "sort done" << '\n';
+  
   resbi = binario(array, 0, tamanho-1, chave);
   cout << "Resultado da busca binaria: " << resbi;
 
