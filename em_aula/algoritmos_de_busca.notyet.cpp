@@ -80,14 +80,14 @@ int linear(int array[], int tamanho, int chave){
 int binario(int array[], int comeco, int fim, int chave){
   int meio;
   while(comeco<=fim){
-    meio = (comeco+(fim-comeco))/2;
+    meio = comeco+(fim-comeco)/2;
     if(array[meio]==chave){
       return meio;
     }
     if(chave < array[meio]){
       fim = meio-1;
     }
-    if(chave > array[meio]){
+    else if(chave > array[meio]){
       comeco = meio+1;
     }
   }
@@ -107,7 +107,7 @@ int main(){
 
   mergeSort(array, 0, tamanho - 1);
   cout << "sort done" << '\n';
-  
+
   resbi = binario(array, 0, tamanho-1, chave);
   cout << "Resultado da busca binaria: " << resbi;
 
