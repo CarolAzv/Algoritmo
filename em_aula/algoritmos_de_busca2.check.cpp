@@ -133,7 +133,7 @@ int binarioR(int array[], int comeco, int fim, int chave){
 }
 
 int main(){
-  int tamanho = 10000, array[10000], chave, resliI, resliR, resbiL, resbiR;
+  int tamanho = 10000, array[10000], chave, resliI, resliR, resbiI, resbiR;
   srand(time(0));
   chave = randomnum();
   randomArray(array, tamanho);
@@ -141,24 +141,26 @@ int main(){
   cout << "A chave áleatoria é: " << chave << '\n';
 
   tic();
-  resliI = linear(array, tamanho, chave);
+  resliI = linearI(array, tamanho, chave);
   toc();
-  cout << "Resultado da busca linear: " << resli << '\n';
+  cout << "Resultado da busca Linear Interativa: " << resliI << '\n';
 
   tic();
+  resliR = linearR(array, 0, chave);
+  toc();
+  cout << "Resultado da busca Linear Recursiva: " << resliR << '\n';
+
   mergeSort(array, 0, tamanho - 1);
 
+  tic();
   resbiI = binarioI(array, 0, tamanho-1, chave);
   toc();
-  cout << "Resultado da busca binaria linear: " << resbiI;
-    
-  resbiI = binarioI(array, 0, tamanho-1, chave);
-  toc();
-  cout << "Resultado da busca binaria linear: " << resbiI;
+  cout << "Resultado da busca Binaria Interativa: " << resbiI;
 
+  tic();
   resbiR = binarioR(array, 0, tamanho-1, chave);
   toc();
-  cout << "Resultado da busca binaria recursiva: " << resbiR;
+  cout << "Resultado da busca Binaria Recursiva: " << resbiR;
 
   return 0;
 }
