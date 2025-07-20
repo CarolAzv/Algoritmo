@@ -28,7 +28,7 @@ int randomnum(){
     random_device rd;
     mt19937 gen(rd());
     uniform_int_distribution<> dis(1, 10000);
-    long long randomNumber = dis(gen);
+    int randomNumber = dis(gen);
 
   return randomNumber;
 }
@@ -90,12 +90,14 @@ int linearI(int array[], int tamanho, int chave){
   return -1;
 }
 
-int linearR(int array[], int indice, int chave){
-   if indice == len(lista):
-        return -1
-    if lista[indice] == chave:
-        return indice
-    return linearR(lista, alvo, indice + 1)
+int linearR(int array[], int tamanho, int indice, int chave){
+   if(indice == tamanho){
+    return -1;
+  }
+    if(array[indice] == chave){
+      return indice;
+    }
+    return linearR(array, tamanho, indice + 1, chave);
 }
 
 int binarioI(int array[], int comeco, int fim, int chave){
@@ -116,7 +118,7 @@ int binarioI(int array[], int comeco, int fim, int chave){
 }
 
 int binarioR(int array[], int comeco, int fim, int chave){
-  int meio = inicio + (fim - inicio) / 2;
+  int meio = comeco + (fim - comeco) / 2;
   
   if (comeco > fim){
     return -1;
@@ -125,15 +127,15 @@ int binarioR(int array[], int comeco, int fim, int chave){
     return meio;
   }
   else if (array[meio] < chave){
-    return binarioR(arr, chave, meio + 1, fim);
+    return binarioR(array, chave, meio + 1, fim);
   }
   else{
-    return binarioR(arr, chave, comeco, meio - 1);
+    return binarioR(array, chave, comeco, meio - 1);
   }
 }
 
 int main(){
-  int tamanho = 10000, array[10000], chave, resliI, resliR, resbiI, resbiR;
+  int tamanho = 10000, array[10000], array2[10000], chave, resliI, resliR, resbiI, resbiR;
   srand(time(0));
   chave = randomnum();
   randomArray(array, tamanho);
@@ -143,22 +145,29 @@ int main(){
   tic();
   resliI = linearI(array, tamanho, chave);
   toc();
-  cout << "Resultado da busca Linear Interativa: " << resliI << '\n';
+  cout << "Resultado da busca Linear Interativa: " << resliI << '\n' << '\n';
 
   tic();
-  resliR = linearR(array, 0, chave);
+  resliR = linearR(array, tamanho, 0, chave);
   toc();
-  cout << "Resultado da busca Linear Recursiva: " << resliR << '\n';
+  cout << "Resultado da busca Linear Recursiva: " << resliR << '\n' << '\n';
 
   mergeSort(array, 0, tamanho - 1);
+  for(int i=0; i<tamanho; i++){
+        array[i] = array2[i];
+    }
+
+  for(int i=0; i<10; i++){
+    cout << array2[i];
+  }
 
   tic();
   resbiI = binarioI(array, 0, tamanho-1, chave);
-  toc();
-  cout << "Resultado da busca Binaria Interativa: " << resbiI;
+  toc(); 
+  cout << "Resultado da busca Binaria Interativa: " << resbiI << '\n' << '\n';
 
   tic();
-  resbiR = binarioR(array, 0, tamanho-1, chave);
+  resbiR = binarioR(array2, 0, tamanho-1, chave);
   toc();
   cout << "Resultado da busca Binaria Recursiva: " << resbiR;
 
