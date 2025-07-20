@@ -26,15 +26,22 @@ long long fatorial(int a){
 }
 
 int main(){
-  int qual;
-
+  int qual, n;
+  
   cout << "-------------------" << '\n';
   cout << "|  1 - fibonacci  |" << '\n';
   cout << "|  2 - fatorial   |" << '\n';
   cout << "-------------------" << '\n';
   cin >> qual;
 
-  if(qual==1){}
+  if(qual==1){
+    long long fibo;
+    cout << "Informe o numero de fibonacci desejado: ";
+    cin >> n;
+
+    fibo = fibonacci(n, 0, 1, 0);
+    cout << '\n' << fibo;
+  }
   
   return 0;
 }
