@@ -19,10 +19,11 @@ long long fibonacci(int n, int a, int b, int check){
 }
 
 long long fatorial(int a){
-  long long ;
+  long long result = a;
   for(int i = 1; i<a; i++){
-    
+    result = result * i;
   }
+  return result;
 }
 
 int main(){
@@ -41,6 +42,20 @@ int main(){
 
     fibo = fibonacci(n, 0, 1, 0);
     cout << '\n' << fibo;
+  }
+
+  if(){
+
+int main(){
+    int n;
+    long long total;
+
+    cout << "Informa seu numero fatorial: ";
+    cin >> n;
+
+    total = fatorial(n);
+
+    cout << '\n' << total;
   }
   
   return 0;
