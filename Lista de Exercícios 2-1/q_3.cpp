@@ -25,4 +25,16 @@ long long fatorial(int a){
   }
 }
 
-int main(){}
+int main(){
+  int qual;
+
+  cout << "-------------------" << '\n';
+  cout << "|  1 - fibonacci  |" << '\n';
+  cout << "|  2 - fatorial   |" << '\n';
+  cout << "-------------------" << '\n';
+  cin >> qual;
+
+  if(qual==1){}
+  
+  return 0;
+}
