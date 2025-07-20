@@ -11,10 +11,11 @@ long long fatorialR(int a){
 }
 
 long long fatorialI(int a){
-  long long ;
+  long long result = a;
   for(int i = 1; i<a; i++){
-    
+    result = result * i;
   }
+  return result;
 }
 
 int main(){
