@@ -29,10 +29,10 @@ long long fatorial(int a){
 int main(){
   int qual, n;
   
-  cout << "-------------------" << '\n';
+  cout << "|-----------------|" << '\n';
   cout << "|  1 - fibonacci  |" << '\n';
   cout << "|  2 - fatorial   |" << '\n';
-  cout << "-------------------" << '\n';
+  cout << "|-----------------|" << '\n';
   cin >> qual;
 
   if(qual==1){
@@ -44,17 +44,12 @@ int main(){
     cout << '\n' << fibo;
   }
 
-  if(){
-
-int main(){
-    int n;
+  else{
     long long total;
-
     cout << "Informa seu numero fatorial: ";
     cin >> n;
 
     total = fatorial(n);
-
     cout << '\n' << total;
   }
   
