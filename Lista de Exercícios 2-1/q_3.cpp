@@ -18,4 +18,11 @@ long long fibonacci(int n, int a, int b, int check){
   }
 }
 
+long long fatorial(int a){
+  long long ;
+  for(int i = 1; i<a; i++){
+    
+  }
+}
+
 int main(){}
