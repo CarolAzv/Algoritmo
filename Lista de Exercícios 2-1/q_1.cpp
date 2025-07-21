@@ -1,14 +1,13 @@
 #include <iostream>
 using namespace std;
 
-int somar(int n, int fim, int check){
-  if(n==check){
-    return fim
+int somar(int n, int soma){
+  if(n==0){
+    return soma;
   }
   else{
-    fim = fim + check;
-    check++;
-    return somar(n, fim, check);
+    soma = soma + n;
+    return somar(n-1, soma);
   }
 }
 
@@ -18,7 +17,7 @@ int main(){
   cout << "Digite até qual numero você quer somar: ";
   cin >> n;
 
-  res = somar(n, 0, 0);
+  res = somar(n, 0);
   cout << '\n' << "Resultado: " << res;
   return 0;
 }
