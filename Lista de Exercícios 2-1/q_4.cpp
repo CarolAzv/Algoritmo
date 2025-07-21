@@ -8,13 +8,32 @@ void randomArray(int array[], int tamanho){
   }
 }
 
+int inverte(int vetor[], int rotev[], int i, int v){
+  if(v==-1){
+    return 0;
+  }
+  else{
+    rotev[v] = vetor[i];
+    return inverte(vetor[], rotev[], i+1, v=1)
+  }
+}
+
 int main(){
   int tamanho;
 
   cout << "Tamanho do vetor: ";
   cin >> tamanho;
-  int vetor[tamanho];
+  int vetor[tamanho], rotev[tamanho];
   randomArray(vetor, tamanho);
+
+  inverte(vetor, rotev, 0, tamanho-1);
+  for(int i=0; i<tamanho; i++){
+    cout << vetor[i] << " ";
+  }
+  cout << '\n' << '\n';
+  for(int i=0; i<tamanho; i++){
+    cout << rotev[i] << " ";
+  }
   
   return 0;
 }
