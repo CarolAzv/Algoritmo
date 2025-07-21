@@ -1,6 +1,21 @@
 #include <iostream>
 using namespace std;
 
+void randomArray(int array[], int tamanho){
+  for (int i = 0; i < tamanho; ++i){
+    array[i] = rand() % 10001; 
+  }
+}
+
+int randomnum(){
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(1, 10000);
+    int randomNumber = dis(gen);
+
+  return randomNumber;
+}
+
 int binarioR(int array[], int comeco, int fim, int chave){
   int meio = comeco + (fim - comeco) / 2;
   
