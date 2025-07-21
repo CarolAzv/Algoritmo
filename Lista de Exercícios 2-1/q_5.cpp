@@ -19,5 +19,25 @@ int binarioR(int array[], int comeco, int fim, int chave){
 }
 
 int main(){
+  int tamanho, chave, resbiR;
+  srand(time(0));
+  
+  cout << "Digit o tamanho do vetor: " << chave << '\n';
+  cin >> tamanho;
+  int array[tamanho];
+  
+  randomArray(array, tamanho);
+  chave = randomnum();
+  
+  cout << "A chave áleatoria é: " << chave << '\n';
+
+  mergeSort(array, 0, tamanho - 1);
+  for(int i=0; i<tamanho; i++){
+        array[i] = array2[i];
+    }
+
+  resbiR = binarioR(array2, 0, tamanho-1, chave);
+  cout << "Resultado da busca Binaria Recursiva: " << resbiR;
+
   return 0;
 }
