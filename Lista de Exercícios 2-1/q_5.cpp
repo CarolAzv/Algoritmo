@@ -7,13 +7,13 @@ void randomArray(int array[], int tamanho){
   }
 }
 
-int randomnum(){
+int randomKey(int tamanho, int array){
     random_device rd;
     mt19937 gen(rd());
-    uniform_int_distribution<> dis(1, 10000);
+    uniform_int_distribution<> dis(0, tamanho);
     int randomNumber = dis(gen);
 
-  return randomNumber;
+  return array[randomNumber];
 }
 
 int binarioR(int array[], int comeco, int fim, int chave){
@@ -42,7 +42,7 @@ int main(){
   int array[tamanho];
   
   randomArray(array, tamanho);
-  chave = randomnum();
+  chave = randomKey(tamanho-1, array);
   
   cout << "A chave áleatoria é: " << chave << '\n';
 
