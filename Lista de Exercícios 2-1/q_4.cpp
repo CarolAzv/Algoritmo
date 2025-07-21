@@ -9,13 +9,14 @@ void randomArray(int array[], int tamanho){
 }
 
 int inverte(int vetor[], int rotev[], int i, int v){
+  int save;
   if(v==-1){
     return 0;
   }
-  else{
-    rotev[v] = vetor[i];
-    return inverte(vetor[], rotev[], i+1, v=1)
-  }
+
+save = vetor[v];
+rotev[i] = save;
+return inverte(vetor, rotev, i+1, v=1);
 }
 
 int main(){
