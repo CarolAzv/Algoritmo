@@ -2,3 +2,33 @@ todos os programas tem que ter uma verção recursiva não recursiva.
 APENAS 2 ALGORITMOS
 
 nenhum programa tem as duas verções
+
+* Implementar as versões iterativas e recursivas dos algoritmos:
+Min/Max; #esse
+Fibonacci; #esse
+Fatorial.
+
+* O código (c++) deve começar perguntando qual dos algoritmos deseja-se rodar e qual versão;
+
+Para o caso de Min/Max: pedir um número n e gerar um array aleatoriamente de tamanho n.
+Para o caso de Fibonacci: pedir um número n;
+Para o caso de Fatorial: pedir um número n.
+
+* O código (c++) também deve perguntar se uma análise do algoritmo desempenho deve ser feita:
+Se sim, criar um campanha com 5 pontos para cada algoritmo e cada versão, mostrando o resultado final com seu tempo de execução; Salvar esses dados (os pontos e valores) em um arquivo de texto (.txt), usar python ou excel para plotar os resultados.
+
+- Individual: no mínimo 2 algoritmos com 2 implementações (recursiva e iterativa) (total = 4);
+- Dupla: no mínimo 3 algoritmos com 3 implementações (recursiva e iterativa) (total = 6).
+
+* O trabalho deve ter (máximo 5 páginas e formato de artigo 2 colunas):
+
+Título, Autor(es), Resumo
+Introdução, Metodologia, Implementação
+Resultados:
+Mostrar gráficos comparando as versões dos algoritmos (complexidade empírica)
+Uso de memória;
+Discussão sobre o porquê dos resultados.
+Comparativo dos algoritmos (das formas iterativas e recursivas)
+Conclusão
+Referências
+Entregáveis: o trabalho em .docx/PDF + todos os códigos (c++, python(gráficos)) e/ou um repositório no github
