@@ -22,7 +22,7 @@ int main(){
   cin >> again;
 
   if(again==1){
-    return main;
+    return main();
   }
   else{
     return 0;
