@@ -14,18 +14,19 @@ long long fibonacciR(int n, int a, int b, int check){
     return a;
   }
   else{
-    return fibonacci(n, a, b, check);
+    return fibonacciR(n, a, b, check);
   }
 }
 
 long long fibonacciI(int n, int a, int b, int check){
   long long fib;
-  while(n!=check){
+  while(check<n){
     check++;
     fib = a + b;
     a = b;
     b = fib;
   }
+  return a;
 }
 
 int main(){
