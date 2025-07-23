@@ -83,7 +83,10 @@ int main(){
   int tamanho, num, mmI[2], mmR[2];
   long long fiboI, fiboR;
 
-  cout << " Fazer uma análise do algoritmo desempenho? SIM=1 NAO!=1 ";
+  cout << "|--------------------------------------------|" << '\n';
+  cout << "| Fazer uma análise do algoritmo desempenho? |" << '\n';
+  cout << "|             SIM = 1    NAO != 1            |" << '\n';
+  cout << "|--------------------------------------------|" << '\n';
   cin >> sn;
 
   if(sn==1){}
