@@ -8,33 +8,48 @@ void randomArray(int array[], int tamanho){
   }
 }
 
-void minmax(int array[],  int tamanho, int min, int max, int mm[]){
+void minmaxI(int array[],  int tamanho, int mmI[]){
   for(int i = 0; i<tamanho; i++){
-    if(array[i] > mm[1]){
-      mm[1] = array[i];
+    if(array[i] > mmI[1]){
+      mmI[1] = array[i];
     }
-    if(array[i] < mm[0]){
-      mm[0] = array[i];
+    if(array[i] < mmI[0]){
+      mmI[0] = array[i];
     }
   }
 }
 
+void minmaxR(int array[],  int tamanho, int mmR[], int i){
+  if(array[i] > mmR[1]){
+    mmR[1] = array[i];
+  }
+  if(array[i] < mmR[0]){
+     mmR[0] = array[i];
+  }
+  if(i!=tamanho){
+    minmaxR(array, n, array[0], array[0], mmR, i+1)
+  }
+}
+
 int main(){
-  int n, mm[2];
+  int n, mmI[2], mmR[2];
 
   cout << "Informe o tamanho da array: ";
   cin >> n;
   int array[n];
 
   randomArray(array, n);
-  mm[0] = array[0];
-  mm[1] = array[0];
-  minmax(array,  n, array[0], array[0], mm);
+  mmI[0] = array[0];
+  mmI[1] = array[0];
+  mmR[0] = array[0];
+  mmR[1] = array[0];
+  minmax(array,  n, mmI);
+  minmaxR(array, n, mmR, 1);
 
   for (int i=0; i < n; ++i){
     cout<< array[i] << " ";
   }
 
-  cout << '\n' << mm[0] << " " << mm[1];
+  cout << '\n' << mmI[0] << " " << mmI[1];
   return 0;
 }
