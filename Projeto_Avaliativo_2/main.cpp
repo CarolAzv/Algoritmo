@@ -1,6 +1,28 @@
 #include <iostream>
+#include <chrono>
 using namespace std;
 
+void tic(int mode=0) {
+    static std::chrono::_V2::system_clock::time_point t_start;
+    
+    if (mode==0)
+        t_start = std::chrono::high_resolution_clock::now();
+    else {
+        auto t_end = std::chrono::high_resolution_clock::now();
+        std::cout << "Elapsed time is " << (t_end-t_start).count()*1E-9 << " seconds\n";
+    }
+}
+void toc() { tic(1); }
+
+//gerador de array aleatoria
+void randomArray(int array[], int tamanho){
+  srand(time(0));
+  for (int i = 0; i < tamanho; ++i){
+    array[i] = rand() % 1001; 
+  }
+}
+
+// função fibonacci Recursiva
 long long fibonacciR(int n, int a, int b, int check){
   long long fib;
   check++;
@@ -18,6 +40,7 @@ long long fibonacciR(int n, int a, int b, int check){
   }
 }
 
+// função fibonacci Interativa
 long long fibonacciI(int n, int a, int b, int check){
   long long fib;
   while(check<n){
@@ -29,13 +52,7 @@ long long fibonacciI(int n, int a, int b, int check){
   return a;
 }
 
-void randomArray(int array[], int tamanho){
-  srand(time(0));
-  for (int i = 0; i < tamanho; ++i){
-    array[i] = rand() % 1001; 
-  }
-}
-
+// função Min/Max Interativa
 void minmaxI(int array[],  int tamanho, int mmI[]){
   for(int i = 0; i<tamanho; i++){
     if(array[i] > mmI[1]){
@@ -47,6 +64,7 @@ void minmaxI(int array[],  int tamanho, int mmI[]){
   }
 }
 
+// função Min/Max Recursiva
 void minmaxR(int array[],  int tamanho, int mmR[], int i){
   if(array[i] > mmR[1]){
     mmR[1] = array[i];
@@ -59,39 +77,43 @@ void minmaxR(int array[],  int tamanho, int mmR[], int i){
   }
 }
 
+
 int main(){
   int tamanho, num, mmI[2], mmR[2];
-  long long fibo;
+  long long fiboI, fiboR;
+
+  cout << "Informe o número de fibonacci desejado: ";
+  cin >> num;
 
   cout << "Informe o tamanho da array: ";
   cin >> tamanho;
   int array[tamanho];
+  randomArray(array, tamanho);
 
-  randomArray(array, n);
-  mmI[0] = array[0];
-  mmI[1] = array[0];
-  mmR[0] = array[0];
-  mmR[1] = array[0];
+  
+  tic();
+  fiboI = fibonacciI(num, 0, 1, 0);
+  toc();
+  cout << "Número de fibonacci Interativo: " << '\n' << fiboI;
+  tic();
+  fiboR = fibonacciR(num, 0, 1, 0);
+  toc();
+  cout << "Número de fibonacci Recursivo: " << '\n' << fiboR;
+
+
+  tic();
+  mmI[0] = array[0]; //menor número Interativo
+  mmI[1] = array[0]; //maior número Interativo
   minmaxI(array,  tamanho, mmI);
-  minmaxR(array, tamanho, mmR, 1);
+  toc();
+  cout << '\n' << "Menor número Interativo: "<< mmI[0] << "Maior número Interativo: " << mmI[1];
 
-  for (int i=0; i < n; ++i){
-    cout<< array[i] << " ";
-  }
-
-  cout << '\n' << mmI[0] << " " << mmI[1];
-  cout << '\n' << mmR[0] << " " << mmR[1];
-  return 0;
-}
-
-  cout << "Informe o numero de fibonacci desejado: ";
-  cin >> num;
-
-  fibo = fibonacciI(num, 0, 1, 0);
-  cout << '\n' << fibo;
-
-  fibo = fibonacciR(num, 0, 1, 0);
-  cout << '\n' << fibo;
+  tic();
+  mmR[0] = array[0]; //menor número Recursivo
+  mmR[1] = array[0]; //maior número Recursivo
+  minmaxR(array, tamanho-1, mmR, 0);
+  toc();
+  cout << '\n' << "Menor número Recursivo: " << mmR[0] << "Maior número Recursivo: " << mmR[1];
   
   return 0;
 }
