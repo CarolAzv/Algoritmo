@@ -27,7 +27,7 @@ void minmaxR(int array[],  int tamanho, int mmR[], int i){
      mmR[0] = array[i];
   }
   if(i!=tamanho){
-    minmaxR(array, n, array[0], array[0], mmR, i+1)
+    minmaxR(array, tamanho, mmR, i+1);
   }
 }
 
@@ -43,7 +43,7 @@ int main(){
   mmI[1] = array[0];
   mmR[0] = array[0];
   mmR[1] = array[0];
-  minmax(array,  n, mmI);
+  minmaxI(array,  n, mmI);
   minmaxR(array, n, mmR, 1);
 
   for (int i=0; i < n; ++i){
@@ -51,5 +51,6 @@ int main(){
   }
 
   cout << '\n' << mmI[0] << " " << mmI[1];
+  cout << '\n' << mmR[0] << " " << mmR[1];
   return 0;
 }
