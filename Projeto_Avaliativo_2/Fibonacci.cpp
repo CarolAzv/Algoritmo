@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-long long fibonacci(int n, int a, int b, int check){
+long long fibonacciR(int n, int a, int b, int check){
   long long fib;
   check++;
   fib = a + b;
@@ -18,6 +18,16 @@ long long fibonacci(int n, int a, int b, int check){
   }
 }
 
+long long fibonacciI(int n, int a, int b, int check){
+  long long fib;
+  while(n!=check){
+    check++;
+    fib = a + b;
+    a = b;
+    b = fib;
+  }
+}
+
 int main(){
   int n;
   long long fibo;
@@ -25,7 +35,10 @@ int main(){
   cout << "Informe o numero de fibonacci desejado: ";
   cin >> n;
 
-  fibo = fibonacci(n, 0, 1, 0);
+  fibo = fibonacciI(n, 0, 1, 0);
+  cout << '\n' << fibo;
+
+  fibo = fibonacciR(n, 0, 1, 0);
   cout << '\n' << fibo;
   
   return 0;
