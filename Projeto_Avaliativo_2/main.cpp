@@ -75,7 +75,14 @@ int main(){
   minmaxI(array,  tamanho, mmI);
   minmaxR(array, tamanho, mmR, 1);
 
-  for(i)aaaaaaaaaaa
+  for (int i=0; i < n; ++i){
+    cout<< array[i] << " ";
+  }
+
+  cout << '\n' << mmI[0] << " " << mmI[1];
+  cout << '\n' << mmR[0] << " " << mmR[1];
+  return 0;
+}
 
   cout << "Informe o numero de fibonacci desejado: ";
   cin >> num;
