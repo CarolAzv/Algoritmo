@@ -29,17 +29,61 @@ long long fibonacciI(int n, int a, int b, int check){
   return a;
 }
 
+void randomArray(int array[], int tamanho){
+  srand(time(0));
+  for (int i = 0; i < tamanho; ++i){
+    array[i] = rand() % 1001; 
+  }
+}
+
+void minmaxI(int array[],  int tamanho, int mmI[]){
+  for(int i = 0; i<tamanho; i++){
+    if(array[i] > mmI[1]){
+      mmI[1] = array[i];
+    }
+    if(array[i] < mmI[0]){
+      mmI[0] = array[i];
+    }
+  }
+}
+
+void minmaxR(int array[],  int tamanho, int mmR[], int i){
+  if(array[i] > mmR[1]){
+    mmR[1] = array[i];
+  }
+  if(array[i] < mmR[0]){
+     mmR[0] = array[i];
+  }
+  if(i!=tamanho){
+    minmaxR(array, tamanho, mmR, i+1);
+  }
+}
+
 int main(){
-  int n;
+  int tamanho, num, mmI[2], mmR[2];
   long long fibo;
 
-  cout << "Informe o numero de fibonacci desejado: ";
-  cin >> n;
+  cout << "Informe o tamanho da array: ";
+  cin >> tamanho;
+  int array[tamanho];
 
-  fibo = fibonacciI(n, 0, 1, 0);
+  randomArray(array, n);
+  mmI[0] = array[0];
+  mmI[1] = array[0];
+  mmR[0] = array[0];
+  mmR[1] = array[0];
+  minmaxI(array,  tamanho, mmI);
+  minmaxR(array, tamanho, mmR, 1);
+
+  for(i)aaaaaaaaaaa
+
+  cout << "Informe o numero de fibonacci desejado: ";
+  cin >> num;
+
+  fibo = fibonacciI(num, 0, 1, 0);
   cout << '\n' << fibo;
 
-  fibo = fibonacciR(n, 0, 1, 0);
+  fibo = fibonacciR(num, 0, 1, 0);
   cout << '\n' << fibo;
   
   return 0;
