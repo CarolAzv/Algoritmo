@@ -311,39 +311,5 @@ int main(){
           }
       }
   }
-
-  cout << "Informe o número de fibonacci desejado: ";
-  cin >> num;
-
-  cout << "Informe o tamanho da array: ";
-  cin >> tamanho;
-  int array[tamanho];
-  randomArray(array, tamanho);
-
-  
-  tic();
-  fiboI = fibonacciI(num, 0, 1, 0);
-  toc();
-  cout << "Número de fibonacci Interativo: " << '\n' << fiboI;
-  tic();
-  fiboR = fibonacciR(num, 0, 1, 0);
-  toc();
-  cout << "Número de fibonacci Recursivo: " << '\n' << fiboR;
-
-
-  tic();
-  mmI[0] = array[0]; //menor número Interativo
-  mmI[1] = array[0]; //maior número Interativo
-  minmaxI(array,  tamanho, mmI);
-  toc();
-  cout << '\n' << "Menor número Interativo: "<< mmI[0] << "Maior número Interativo: " << mmI[1];
-
-  tic();
-  mmR[0] = array[0]; //menor número Recursivo
-  mmR[1] = array[0]; //maior número Recursivo
-  minmaxR(array, tamanho-1, mmR, 0);
-  toc();
-  cout << '\n' << "Menor número Recursivo: " << mmR[0] << "Maior número Recursivo: " << mmR[1];
-  
   return 0;
 }
