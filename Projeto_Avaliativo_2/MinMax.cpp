@@ -20,6 +20,7 @@ void minmaxI(int array[],  int tamanho, int mmI[]){
 }
 
 void minmaxR(int array[],  int tamanho, int mmR[], int i){
+  cout << array[i] << " ";
   if(array[i] > mmR[1]){
     mmR[1] = array[i];
   }
@@ -44,8 +45,9 @@ int main(){
   mmR[0] = array[0];
   mmR[1] = array[0];
   minmaxI(array,  n, mmI);
-  minmaxR(array, n, mmR, 1);
+  minmaxR(array, n-1, mmR, 0);
 
+  cout << '\n';
   for (int i=0; i < n; ++i){
     cout<< array[i] << " ";
   }
