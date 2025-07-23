@@ -104,82 +104,150 @@ int main(){
       randomArray(array4, tamanho4);
       randomArray(array5, tamanho5);
 
-      cout << "|================================================================";
+      cout << "|================================================================" << '\n' ;
       cout << "| fibonacci Interativo 1" << '\n' << "| ";
       tic();
       fiboI1 = fibonacciI(num1, 0, 1, 0);
       toc();
       cout << " | Número de fibonacci Interativo: " << fiboI1 << '\n' ;
-      cout << "|================================================================";
+      cout << "|================================================================" << '\n' ;
       cout << "| fibonacci Interativo 2" << '\n' << "| ";
       tic();
       fiboI2 = fibonacciI(num2, 0, 1, 0);
       toc();
       cout << " | Número de fibonacci Interativo: " << fiboI2 << '\n' ;
-      cout << "|================================================================";
+      cout << "|================================================================" << '\n' ;
       cout << "| fibonacci Interativo 3" << '\n' << "| ";
       tic();
       fiboI3 = fibonacciI(num3, 0, 1, 0);
       toc();
       cout << " | Número de fibonacci Interativo: " << fiboI3 << '\n' ;
-      cout << "|================================================================";
+      cout << "|================================================================" << '\n' ;
       cout << "| fibonacci Interativo 4" << '\n' << "| ";
       tic();
       fiboI4 = fibonacciI(num4, 0, 1, 0);
       toc();
       cout << " | Número de fibonacci Interativo: " << fiboI4 << '\n' ;
-      cout << "|================================================================";
+      cout << "|================================================================" << '\n' ;
       cout << "| fibonacci Interativo 5" << '\n' << "| ";
       tic();
       fiboI5 = fibonacciI(num5, 0, 1, 0);
       toc();
       cout << " | Número de fibonacci Interativo: " << fiboI5 << '\n' ;
-
-      cout << "|================================================================";
+      cout << "|================================================================" << '\n' ;
+      cout << "|================================================================" << '\n' ;
       cout << "| fibonacci Recursivo 1" << '\n' << "| ";
       tic();
       fiboR1 = fibonacciR(num1, 0, 1, 0);
       toc();
       cout << " | Número de fibonacci Recursivo: " << fiboI1 << '\n' ;
-      cout << "|================================================================";
+      cout << "|================================================================" << '\n' ;
       cout << "| fibonacci Recursivo 2" << '\n' << "| ";
       tic();
       fiboR2 = fibonacciR(num2, 0, 1, 0);
       toc();
       cout << " | Número de fibonacci Recursivo: " << fiboI2 << '\n' ;
-      cout << "|================================================================";
+      cout << "|================================================================" << '\n' ;
       cout << "| fibonacci Recursivo 3" << '\n' << "| ";
       tic();
       fiboR3 = fibonacciR(num3, 0, 1, 0);
       toc();
       cout << " | Número de fibonacci Recursivo: " << fiboI3 << '\n' ;
-      cout << "|================================================================";
+      cout << "|================================================================" << '\n' ;
       cout << "| fibonacci Recursivo 4" << '\n' << "| ";
       tic();
       fiboR4 = fibonacciR(num4, 0, 1, 0);
       toc();
       cout << " | Número de fibonacci Recursivo: " << fiboI4 << '\n' ;
-      cout << "|================================================================";
+      cout << "|================================================================" << '\n' ;
       cout << "| fibonacci Recursivo 5" << '\n' << "| ";
       tic();
       fiboR5 = fibonacciR(num5, 0, 1, 0);
       toc();
       cout << " | Número de fibonacci Recursivo: " << fiboI5 << '\n' ;
-
-
+      cout << "|================================================================" << '\n' ;
+      
+      cout << "|================================================================" << '\n' ;
+      cout << "| Min/Max Interativo 1" << '\n' << "| ";
       tic();
-      mmI[0] = array[0]; //menor número Interativo
-      mmI[1] = array[0]; //maior número Interativo
-      minmaxI(array,  tamanho, mmI);
+      mmI1[0] = array1[0]; //menor número Interativo
+      mmI1[1] = array1[0]; //maior número Interativo
+      minmaxI(array1,  tamanho1, mmI1);
       toc();
-      cout << '\n' << "Menor número Interativo: "<< mmI[0] << "Maior número Interativo: " << mmI[1];
-
+      cout << '\n' << "| Menor número Interativo: "<< mmI1[0] << " | Maior número Interativo: " << mmI1[1] << '\n' ;
+      cout << "|================================================================" << '\n' ;
+      cout << "| Min/Max Interativo 2" << '\n' << "| ";
       tic();
-      mmR[0] = array[0]; //menor número Recursivo
-      mmR[1] = array[0]; //maior número Recursivo
-      minmaxR(array, tamanho-1, mmR, 0);
+      mmI2[0] = array2[0]; //menor número Interativo
+      mmI2[1] = array2[0]; //maior número Interativo
+      minmaxI(array2,  tamanho2, mmI2);
       toc();
-      cout << '\n' << "Menor número Recursivo: " << mmR[0] << "Maior número Recursivo: " << mmR[1];
+      cout << '\n' << "| Menor número Interativo: "<< mmI2[0] << " | Maior número Interativo: " << mmI2[1] << '\n' ;
+      cout << "|================================================================" << '\n' ;
+      cout << "| Min/Max Interativo 3" << '\n' << "| ";
+      tic();
+      mmI3[0] = array3[0]; //menor número Interativo
+      mmI3[1] = array3[0]; //maior número Interativo
+      minmaxI(array3,  tamanho3, mmI3);
+      toc();
+      cout << '\n' << "| Menor número Interativo: "<< mmI3[0] << " | Maior número Interativo: " << mmI3[1] << '\n' ;
+      cout << "|================================================================" << '\n' ;
+      cout << "| Min/Max Interativo 4" << '\n' << "| ";
+      tic();
+      mmI4[0] = array4[0]; //menor número Interativo
+      mmI4[1] = array4[0]; //maior número Interativo
+      minmaxI(array4,  tamanho4, mmI4);
+      toc();
+      cout << '\n' << "| Menor número Interativo: "<< mmI4[0] << " | Maior número Interativo: " << mmI4[1] << '\n' ;
+      cout << "|================================================================" << '\n' ;
+      cout << "| Min/Max Interativo 5" << '\n' << "| ";
+      tic();
+      mmI5[0] = array5[0]; //menor número Interativo
+      mmI5[1] = array5[0]; //maior número Interativo
+      minmaxI(array5,  tamanho5, mmI5);
+      toc();
+      cout << '\n' << "| Menor número Interativo: "<< mmI5[0] << " | Maior número Interativo: " << mmI5[1] << '\n' ;
+      cout << "|================================================================" << '\n' ;
+      cout << "|================================================================" << '\n' ;
+      cout << "| Min/Max Recursivo 1" << '\n' << "| ";
+      tic();
+      mmR1[0] = array1[0]; //menor número Recursivo
+      mmR1[1] = array1[0]; //maior número Recursivo
+      minmaxR(array1, tamanho1-1, mmR1, 0);
+      toc();
+      cout << '\n' << "| Menor número Recursivo: "<< mmR1[0] << " |Maior número Recursivo: " << mmR1[1] << '\n' ;
+      cout << "|================================================================" << '\n' ;
+      cout << "| Min/Max Recursivo 2" << '\n' << "| ";
+      tic();
+      mmR2[0] = array2[0]; //menor número Recursivo
+      mmR2[1] = array2[0]; //maior número Recursivo
+      minmaxR(array2, tamanho2-1, mmR2, 0);
+      toc();
+      cout << '\n' << "| Menor número Recursivo: "<< mmR2[0] << " |Maior número Recursivo: " << mmR2[1] << '\n' ;
+      cout << "|================================================================" << '\n' ;
+      cout << "| Min/Max Recursivo 3" << '\n' << "| ";
+      tic();
+      mmR3[0] = array3[0]; //menor número Recursivo
+      mmR3[1] = array3[0]; //maior número Recursivo
+      minmaxR(array3, tamanho3-1, mmR3, 0);
+      toc();
+      cout << '\n' << "| Menor número Recursivo: "<< mmR3[0] << " |Maior número Recursivo: " << mmR3[1] << '\n' ;
+      cout << "|================================================================" << '\n' ;
+      cout << "| Min/Max Recursivo 4" << '\n' << "| ";
+      tic();
+      mmR4[0] = array4[0]; //menor número Recursivo
+      mmR4[1] = array4[0]; //maior número Recursivo
+      minmaxR(array, tamanho4-1, mmR4, 0);
+      toc();
+      cout << '\n' << "| Menor número Recursivo: "<< mmR4[0] << " |Maior número Recursivo: " << mmR4[1] << '\n' ;
+      cout << "|================================================================" << '\n' ;
+      cout << "| Min/Max Recursivo 5" << '\n' << "| ";
+      tic();
+      mmR5[0] = array5[0]; //menor número Recursivo
+      mmR5[1] = array5[0]; //maior número Recursivo
+      minmaxR(array5, tamanho5-1, mmR5, 0);
+      toc();
+      cout << '\n' << "| Menor número Recursivo: "<< mmR5[0] << " |Maior número Recursivo: " << mmR5[1] << '\n' ;
   }
 
   else{
