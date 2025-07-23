@@ -9,7 +9,7 @@ void tic(int mode=0) {
         t_start = std::chrono::high_resolution_clock::now();
     else {
         auto t_end = std::chrono::high_resolution_clock::now();
-        std::cout << "Elapsed time is " << (t_end-t_start).count()*1E-9 << " seconds\n";
+        std::cout << "Tempo:  " << (t_end-t_start).count()*1E-9 << " secundos";
     }
 }
 void toc() { tic(1); }
@@ -104,15 +104,67 @@ int main(){
       randomArray(array4, tamanho4);
       randomArray(array5, tamanho5);
 
-  
+      cout << "|================================================================";
+      cout << "| fibonacci Interativo 1" << '\n' << "| ";
       tic();
-      fiboI = fibonacciI(num, 0, 1, 0);
+      fiboI1 = fibonacciI(num1, 0, 1, 0);
       toc();
-      cout << "Número de fibonacci Interativo: " << '\n' << fiboI;
+      cout << " | Número de fibonacci Interativo: " << fiboI1 << '\n' ;
+      cout << "|================================================================";
+      cout << "| fibonacci Interativo 2" << '\n' << "| ";
       tic();
-      fiboR = fibonacciR(num, 0, 1, 0);
+      fiboI2 = fibonacciI(num2, 0, 1, 0);
       toc();
-      cout << "Número de fibonacci Recursivo: " << '\n' << fiboR;
+      cout << " | Número de fibonacci Interativo: " << fiboI2 << '\n' ;
+      cout << "|================================================================";
+      cout << "| fibonacci Interativo 3" << '\n' << "| ";
+      tic();
+      fiboI3 = fibonacciI(num3, 0, 1, 0);
+      toc();
+      cout << " | Número de fibonacci Interativo: " << fiboI3 << '\n' ;
+      cout << "|================================================================";
+      cout << "| fibonacci Interativo 4" << '\n' << "| ";
+      tic();
+      fiboI4 = fibonacciI(num4, 0, 1, 0);
+      toc();
+      cout << " | Número de fibonacci Interativo: " << fiboI4 << '\n' ;
+      cout << "|================================================================";
+      cout << "| fibonacci Interativo 5" << '\n' << "| ";
+      tic();
+      fiboI5 = fibonacciI(num5, 0, 1, 0);
+      toc();
+      cout << " | Número de fibonacci Interativo: " << fiboI5 << '\n' ;
+
+      cout << "|================================================================";
+      cout << "| fibonacci Recursivo 1" << '\n' << "| ";
+      tic();
+      fiboR1 = fibonacciR(num1, 0, 1, 0);
+      toc();
+      cout << " | Número de fibonacci Recursivo: " << fiboI1 << '\n' ;
+      cout << "|================================================================";
+      cout << "| fibonacci Recursivo 2" << '\n' << "| ";
+      tic();
+      fiboR2 = fibonacciR(num2, 0, 1, 0);
+      toc();
+      cout << " | Número de fibonacci Recursivo: " << fiboI2 << '\n' ;
+      cout << "|================================================================";
+      cout << "| fibonacci Recursivo 3" << '\n' << "| ";
+      tic();
+      fiboR3 = fibonacciR(num3, 0, 1, 0);
+      toc();
+      cout << " | Número de fibonacci Recursivo: " << fiboI3 << '\n' ;
+      cout << "|================================================================";
+      cout << "| fibonacci Recursivo 4" << '\n' << "| ";
+      tic();
+      fiboR4 = fibonacciR(num4, 0, 1, 0);
+      toc();
+      cout << " | Número de fibonacci Recursivo: " << fiboI4 << '\n' ;
+      cout << "|================================================================";
+      cout << "| fibonacci Recursivo 5" << '\n' << "| ";
+      tic();
+      fiboR5 = fibonacciR(num5, 0, 1, 0);
+      toc();
+      cout << " | Número de fibonacci Recursivo: " << fiboI5 << '\n' ;
 
 
       tic();
