@@ -80,8 +80,6 @@ void minmaxR(int array[],  int tamanho, int mmR[], int i){
 
 int main(){
   int sn;
-  int tamanho, num, mmI[2], mmR[2];
-  long long fiboI, fiboR;
 
   cout << "|--------------------------------------------|" << '\n';
   cout << "| Fazer uma análise do algoritmo desempenho? |" << '\n';
@@ -89,7 +87,48 @@ int main(){
   cout << "|--------------------------------------------|" << '\n';
   cin >> sn;
 
-  if(sn==1){}
+  if(sn==1){
+      int tamanho1, tamanho2, tamanho3, tamanho4, tamanho5
+      int num1, num2, num3, num4, num5, 
+      int mmI1[2], mmI2[2], mmI3[2], mmI4[2], mmI5[2], mmR1[2], mmR2[2], mmR3[2], mmR4[2], mmR5[2];
+      long long fiboI1, fiboI2, fiboI3, fiboI4, fiboI5, fiboR1, fiboR2, fiboR3, fiboR4, fiboR5;
+      cout << "Informe os números de fibonacci desejados: ";
+      cin >> num1 >> num2 >> num3 >> num4 >> num5;
+
+      cout << "Informe o tamanho da array: ";
+      cin >> tamanho1 >> tamanho2 >> tamanho3 >> tamanho4 >> tamanho5;
+      int array1[tamanho1], array2[tamanho2], array3[tamanho3], array4[tamanho4], array5[tamanho5];
+      randomArray(array1, tamanho1);
+      randomArray(array2, tamanho2);
+      randomArray(array3, tamanho3);
+      randomArray(array4, tamanho4);
+      randomArray(array5, tamanho5);
+
+  
+      tic();
+      fiboI = fibonacciI(num, 0, 1, 0);
+      toc();
+      cout << "Número de fibonacci Interativo: " << '\n' << fiboI;
+      tic();
+      fiboR = fibonacciR(num, 0, 1, 0);
+      toc();
+      cout << "Número de fibonacci Recursivo: " << '\n' << fiboR;
+
+
+      tic();
+      mmI[0] = array[0]; //menor número Interativo
+      mmI[1] = array[0]; //maior número Interativo
+      minmaxI(array,  tamanho, mmI);
+      toc();
+      cout << '\n' << "Menor número Interativo: "<< mmI[0] << "Maior número Interativo: " << mmI[1];
+
+      tic();
+      mmR[0] = array[0]; //menor número Recursivo
+      mmR[1] = array[0]; //maior número Recursivo
+      minmaxR(array, tamanho-1, mmR, 0);
+      toc();
+      cout << '\n' << "Menor número Recursivo: " << mmR[0] << "Maior número Recursivo: " << mmR[1];
+  }
 
   else{
       int qual, ver;
