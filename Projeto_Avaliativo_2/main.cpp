@@ -79,8 +79,76 @@ void minmaxR(int array[],  int tamanho, int mmR[], int i){
 
 
 int main(){
+  int sn;
   int tamanho, num, mmI[2], mmR[2];
   long long fiboI, fiboR;
+
+  cout << " Fazer uma análise do algoritmo desempenho? SIM=1 NAO!=1 ";
+  cin >> sn;
+
+  if(sn==1){}
+
+  else{
+      int qual, ver;
+      cout << '\n';
+      cout << "|-----------------------------|" << '\n';
+      cout << "| Algoritmo de fibonacci    1 |" << '\n';
+      cout << "| Algoritmo de Min/Max      2 |" << '\n';
+      cout << "|-----------------------------|" << '\n';
+      cin >> qual;
+
+      if(qual==1){
+          cout << '\n';
+          cout << "|------------------------|" << '\n';
+          cout << "| Verção Interativa    1 |" << '\n';
+          cout << "| Verção Recursiva     2 |" << '\n';
+          cout << "|------------------------|" << '\n';
+          cin >> ver;
+          int num;
+          cout << '\n' << "Informe o número de fibonacci desejado: ";
+          cin >> num;
+          
+          if(ver==1){
+              long long fiboI;
+              fiboI = fibonacciI(num, 0, 1, 0);
+              cout << "Número de Fibonacci Interativo: " << '\n' << fiboI;
+          }
+          else{
+              long long fiboR;
+              fiboR = fibonacciR(num, 0, 1, 0);
+              cout << "Número de Fibonacci Recursivo: " << '\n' << fiboR;
+          } 
+      }
+
+      else{
+          cout << '\n';
+          cout << "|------------------------|" << '\n';
+          cout << "| Verção Interativa    1 |" << '\n';
+          cout << "| Verção Recursiva     2 |" << '\n';
+          cout << "|------------------------|" << '\n';
+          cin >> ver;
+          int tamanho;
+          cout << '\n' << "Informe o tamanho da array: ";
+          cin >> tamanho;
+          int array[tamanho];
+          randomArray(array, tamanho);
+
+          if(ver==1){
+              int mmI[2];
+              mmI[0] = array[0]; //menor número Interativo
+              mmI[1] = array[0]; //maior número Interativo
+              minmaxI(array,  tamanho, mmI);
+              cout << '\n' << "Menor número Interativo: "<< mmI[0] << "Maior número Interativo: " << mmI[1];
+          }
+          else{
+              int mmR[2];
+              mmR[0] = array[0]; //menor número Recursivo
+              mmR[1] = array[0]; //maior número Recursivo
+              minmaxR(array, tamanho-1, mmR, 0);
+              cout << '\n' << "Menor número Recursivo: " << mmR[0] << "Maior número Recursivo: " << mmR[1];
+          }
+      }
+  }
 
   cout << "Informe o número de fibonacci desejado: ";
   cin >> num;
