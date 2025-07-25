@@ -1,0 +1,6 @@
+#include <iostream>
+using namespace std;
+
+itn main(){
+  return 0;
+}
