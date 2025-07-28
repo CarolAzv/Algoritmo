@@ -3,11 +3,12 @@
 using namespace std;
 
 void divisor(char letras[], char vogais[], char consoantes[]){
+    char vogais[6]= "aeiou";
     for(int b=0; b<strlen(letras)-1; b++){
         char temp[2];
         temp[0] = letras[b];
         temp[1] = '\0';
-        if(letras[b]==char("a") || letras[b]==char("e") || letras[b]==char("i") || letras[b]==char("o") || letras[b]==char("u")){
+        if(letras[b]==vogais[0] || letras[b]==vogais[1] || letras[b]==vogais[2] || letras[b]==vogais[3] || letras[b]==vogais[4]){
             strcat(vogais, temp);
         }
         else{
@@ -31,4 +32,3 @@ int main(){
      }
 
     return 0;
-}
