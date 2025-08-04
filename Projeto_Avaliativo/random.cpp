@@ -10,6 +10,15 @@ void randomArray(int array[], int tamanho){
   }
 }
 
+int randomNum(int tamanho){
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(0, tamanho);
+    int randomNumber = dis(gen);
+
+    return randomNumber;
+}
+
 int main(){
   int tamanho, array[300];
 
@@ -24,4 +33,5 @@ int main(){
 
   return 0;
 }
+
 
