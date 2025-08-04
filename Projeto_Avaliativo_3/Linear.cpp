@@ -2,19 +2,28 @@
 using namespace std;
 
 void randomArray(int array[], int tamanho){
-  srand(time(0));
-  for (int i = 0; i < tamanho; ++i){
-    array[i] = rand() % 1001; 
-  }
+    srand(time(0));
+    for (int i = 0; i < tamanho; ++i){
+        array[i] = rand() % 1001; 
+    }
 }
 
-int linear(int array[], int n, int want){
-  for(int i=0; i<n; i++){
-    if(array[i]==want){
-      return i;
+int randomNumFromArray(int tamanho, int array[]){
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(0, tamanho);
+    int randomNumber = dis(gen);
+
+    return array[randomNumber];
+}
+
+int linear(int array[], int tamanho, int want){
+    for(int i=0; i<tamanho; i++){
+        if(array[i]==want){
+            return i;
+        }
     }
-  }
-  return -1;
+    return -1;
 }
 
 int main(){
@@ -24,8 +33,8 @@ int main(){
     int array[n];
 
     randomArray(array, n);
-    tocheck = ;
-    result = linear(array,  n, want);
+    tocheck = randomNum(n, array);
+    result = linear(array,  n, tocheck);
   
     return 0;
 }
