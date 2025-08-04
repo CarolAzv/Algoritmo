@@ -17,7 +17,7 @@ int randomNumFromArray(int tamanho, int array[]){
     return array[randomNumber];
 }
 
-int linear(int array[], int tamanho, int want){
+int linearI(int array[], int tamanho, int want){
     for(int i=0; i<tamanho; i++){
         if(array[i]==want){
             return i;
@@ -34,7 +34,7 @@ int main(){
 
     randomArray(array, n);
     tocheck = randomNum(n, array);
-    result = linear(array,  n, tocheck);
+    result = linearI(array,  n, tocheck);
   
     return 0;
 }
