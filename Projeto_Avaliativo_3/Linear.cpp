@@ -8,10 +8,24 @@ void randomArray(int array[], int tamanho){
   }
 }
 
+int linear(int array[], int n, int want){
+  for(int i=0; i<n; i++){
+    if(array[i]==want){
+      return i;
+    }
+  }
+  return -1;
+}
+
 int main(){
-    int n;
+    int n, result, tocheck;
     cout << "Informe o tamanho da lista: "; // << "\n";
     cin >> n;
-    
+    int array[n];
+
+    randomArray(array, n);
+    tocheck = ;
+    result = linear(array,  n, want);
+  
     return 0;
 }
