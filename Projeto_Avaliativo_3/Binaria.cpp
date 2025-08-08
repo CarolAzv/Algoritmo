@@ -1,6 +1,22 @@
 #include <iostream>
 using namespace std;
 
+void randomArray(int array[], int tamanho){
+    srand(time(0));
+    for (int i = 0; i < tamanho; ++i){
+        array[i] = rand() % 1001; 
+    }
+}
+
+int randomNumFromArray(int tamanho, int array[]){
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(0, tamanho);
+    int randomNumber = dis(gen);
+
+    return array[randomNumber];
+}
+
 void merge(int array[], int left, int mid, int right){
     int n1 = mid - left + 1;
     int n2 = right - mid;
@@ -45,6 +61,11 @@ void mergeSort(int array[], int left, int right)
     mergeSort(array, left, mid);
     mergeSort(array, mid + 1, right);
     merge(array, left, mid, right);
+}
+
+
+int binarioI(int array[], int tamanho, int want){
+    
 }
 
 
