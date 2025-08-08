@@ -52,8 +52,7 @@ void merge(int array[], int left, int mid, int right){
     }
 }
 
-void mergeSort(int array[], int left, int right)
-{
+void mergeSort(int array[], int left, int right){
     if (left >= right)
         return;
 
@@ -90,6 +89,7 @@ int main(){
 
     randomArray(array, n);
     tocheck = randomNum(n, array);
+    mergeSort(array[], 0, int tamanho-1);
     resultI = linearI(array,  n, tocheck);
 
     cout << '\n' << "Resultado da busca Bináia Iterativa: " << resultI;
