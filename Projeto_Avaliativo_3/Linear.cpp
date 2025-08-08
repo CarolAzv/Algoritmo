@@ -3,17 +3,15 @@ using namespace std;
 
 void randomArray(int array[], int tamanho){
     srand(time(0));
+    int oque = tamanho+(tamanho/2);
     for (int i = 0; i < tamanho; ++i){
-        array[i] = rand() % 1001; 
+        array[i] = rand() % oque; 
     }
 }
 
 int randomNumFromArray(int tamanho, int array[]){
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dis(0, tamanho);
-    int randomNumber = dis(gen);
-
+    srand(time(0));
+    int randomNumber = rand() % tamanho; 
     return array[randomNumber];
 }
 
@@ -43,10 +41,16 @@ int main(){
     int array[n];
 
     randomArray(array, n);
-    tocheck = randomNum(n, array);
+    int see = randomNumFromArray(n, array);
+    tocheck = randomNumFromArray(see, array);
     resultI = linearI(array,  n, tocheck);
     resultR = linearR(array,  n, tocheck);
 
+    cout << '\n' << "numero a procurar: " << tocheck << '\n';
+    for(int i=0; i<n; i++){
+        cout << array[i] << ", ";
+    }
+    cout << '\n';
     cout << '\n' << "Resultado da busca Linear Iterativa: " << resultI;
     cout << '\n' << "Resultado da busca Linear Recursiva: " << resultI;
   
