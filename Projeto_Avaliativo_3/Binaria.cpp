@@ -83,5 +83,16 @@ int binarioI(int array[], int tamanho, int want){
 
 
 int main(){
-    return 0
+    int n, resultI, tocheck;
+    cout << "Informe o tamanho da lista: "; // << "\n";
+    cin >> n;
+    int array[n];
+
+    randomArray(array, n);
+    tocheck = randomNum(n, array);
+    resultI = linearI(array,  n, tocheck);
+
+    cout << '\n' << "Resultado da busca Bináia Iterativa: " << resultI;
+  
+    return 0;
 }
