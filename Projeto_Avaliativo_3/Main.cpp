@@ -119,3 +119,25 @@ int main(){
   
     return 0;
 }
+
+int main(){
+    int n, resultI, tocheck;
+    cout << "Informe o tamanho da lista: "; // << "\n";
+    cin >> n;
+    int array[n];
+
+    randomArray(array, n);
+    tocheck = randomNumFromArray(n, array);
+    mergeSort(array, 0, n-1);
+    resultI = binarioI(array,  n, tocheck);
+
+    cout << '\n' << "numero a procurar: " << tocheck << '\n';
+    for(int i=0; i<n; i++){
+        cout << array[i] << ", ";
+    }
+    cout << '\n';
+
+    cout << '\n' << "Resultado da busca Bináia Iterativa: " << resultI;
+  
+    return 0;
+}
