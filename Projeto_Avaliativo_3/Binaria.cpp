@@ -1,19 +1,18 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 void randomArray(int array[], int tamanho){
     srand(time(0));
+    int oque = tamanho+(tamanho/2);
     for (int i = 0; i < tamanho; ++i){
-        array[i] = rand() % 1001; 
+        array[i] = rand() % oque; 
     }
 }
 
 int randomNumFromArray(int tamanho, int array[]){
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dis(0, tamanho);
-    int randomNumber = dis(gen);
-
+    srand(time(0));
+    int randomNumber = rand() % tamanho; 
     return array[randomNumber];
 }
 
@@ -29,7 +28,7 @@ void merge(int array[], int left, int mid, int right){
     int i = 0, j = 0;
     int k = left;
   
-    while (i < n1 && j < n2) {
+    while (i < n1 && j < n2){
         if (L[i] <= R[j]) {
             array[k] = L[i];
             i++;
@@ -40,12 +39,12 @@ void merge(int array[], int left, int mid, int right){
         }
         k++;
     }
-    while (i < n1) {
+    while (i < n1){
         array[k] = L[i];
         i++;
         k++;
     }
-    while (j < n2) {
+    while (j < n2){
         array[k] = R[j];
         j++;
         k++;
@@ -67,13 +66,13 @@ int binarioI(int array[], int tamanho, int want){
   int meio, comeco=0, fim=tamanho-1;
   while(comeco<=fim){
     meio = comeco+(fim-comeco)/2;
-    if(array[meio]==chave){
+    if(array[meio]==want){
       return meio;
     }
-    if(chave < array[meio]){
+    if(want < array[meio]){
       fim = meio-1;
     }
-    else if(chave > array[meio]){
+    else if(want > array[meio]){
       comeco = meio+1;
     }
   }
@@ -88,9 +87,15 @@ int main(){
     int array[n];
 
     randomArray(array, n);
-    tocheck = randomNum(n, array);
-    mergeSort(array[], 0, int tamanho-1);
-    resultI = linearI(array,  n, tocheck);
+    tocheck = randomNumFromArray(n, array);
+    mergeSort(array, 0, n-1);
+    resultI = binarioI(array,  n, tocheck);
+
+    cout << '\n' << "numero a procurar: " << tocheck << '\n';
+    for(int i=0; i<n; i++){
+        cout << array[i] << ", ";
+    }
+    cout << '\n';
 
     cout << '\n' << "Resultado da busca Bináia Iterativa: " << resultI;
   
