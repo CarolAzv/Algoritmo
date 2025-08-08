@@ -47,8 +47,8 @@ int main(){
     resultI = linearI(array,  n, tocheck);
     resultR = linearR(array,  n, tocheck);
 
-    cout << '\n' << "Resultado de Linear Iterativa: " << resultI;
-    cout << '\n' << "Resultado de Linear Recursiva: " << resultI;
+    cout << '\n' << "Resultado da busca Linear Iterativa: " << resultI;
+    cout << '\n' << "Resultado da busca Linear Recursiva: " << resultI;
   
     return 0;
 }
