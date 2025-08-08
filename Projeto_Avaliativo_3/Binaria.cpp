@@ -65,7 +65,20 @@ void mergeSort(int array[], int left, int right)
 
 
 int binarioI(int array[], int tamanho, int want){
-    
+  int meio, comeco=0, fim=tamanho-1;
+  while(comeco<=fim){
+    meio = comeco+(fim-comeco)/2;
+    if(array[meio]==chave){
+      return meio;
+    }
+    if(chave < array[meio]){
+      fim = meio-1;
+    }
+    else if(chave > array[meio]){
+      comeco = meio+1;
+    }
+  }
+  return -1;
 }
 
 
