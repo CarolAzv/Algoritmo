@@ -26,24 +26,29 @@ int linearI(int array[], int tamanho, int want){
     return -1;
 }
 
-int linearR(int array[], int tamanho, int want){ //FIX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    for(int i=0; i<tamanho; i++){
-        if(array[i]==want){
-            return i;
-        }
+int linearR(int array[], int tamanho, int want){
+    if(array[tamanho-1]==want){
+        return tamanho-1;
     }
-    return -1;
+    else if(tamanho-1==0){
+        return -1;
+    }
+    return linearR(array, tamanho-1, want);
 }
 
 int main(){
-    int n, result, tocheck;
+    int n, resultI, tocheck, resultR;
     cout << "Informe o tamanho da lista: "; // << "\n";
     cin >> n;
     int array[n];
 
     randomArray(array, n);
     tocheck = randomNum(n, array);
-    result = linearI(array,  n, tocheck);
+    resultI = linearI(array,  n, tocheck);
+    resultR = linearR(array,  n, tocheck);
+
+    cout << '\n' << "Resultado de Linear Iterativa: " << resultI;
+    cout << '\n' << "Resultado de Linear Recursiva: " << resultI;
   
     return 0;
 }
