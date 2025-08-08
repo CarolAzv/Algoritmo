@@ -26,6 +26,15 @@ int linearI(int array[], int tamanho, int want){
     return -1;
 }
 
+int linearR(int array[], int tamanho, int want){ //FIX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    for(int i=0; i<tamanho; i++){
+        if(array[i]==want){
+            return i;
+        }
+    }
+    return -1;
+}
+
 int main(){
     int n, result, tocheck;
     cout << "Informe o tamanho da lista: "; // << "\n";
