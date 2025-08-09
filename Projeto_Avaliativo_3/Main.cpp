@@ -1,6 +1,19 @@
 #include <iostream>
 using namespace std;
 
+void tic(int mode=0) {
+    static std::chrono::_V2::system_clock::time_point t_start;
+    
+    if (mode==0)
+        t_start = std::chrono::high_resolution_clock::now();
+    else {
+        auto t_end = std::chrono::high_resolution_clock::now();
+        std::cout << "Tempo:  " << (t_end-t_start).count()*1E-9 << " secundos";
+    }
+}
+void toc() { tic(1); }
+
+
 void randomArray(int array[], int tamanho){
     srand(time(0));
     int oque = tamanho+(tamanho/2);
@@ -106,7 +119,9 @@ int main(){
     randomArray(array, n);
     int see = randomNumFromArray(n, array);
     tocheck = randomNumFromArray(see, array);
+    
     resultI = linearI(array,  n, tocheck);
+    
     resultR = linearR(array,  n, tocheck);
 
     cout << '\n' << "numero a procurar: " << tocheck << '\n';
